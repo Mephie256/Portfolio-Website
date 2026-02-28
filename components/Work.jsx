@@ -38,8 +38,10 @@ export default function Work() {
         My latest work
       </h2>
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
-        Welcome to my web development portfolio! Explore a collection of
-        projects showcasing my expertise in front-end development.
+        My latest work showcases innovative software solutions, modern graphic
+        designs, and high-quality video edits crafted with precision. Each
+        project reflects creativity, technical expertise, and a strong focus on
+        delivering real impact.
       </p>
 
       <div className="grid grid-cols-auto my-10 gap-5 dark:text-black">
