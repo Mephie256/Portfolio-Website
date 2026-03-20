@@ -84,7 +84,7 @@ export default function Navbar() {
         ref={navRef}
         className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50"
       >
-        <a href="https://prebuiltui.com?utm_source=eliana">
+        <a href="/">
           <img
             src="/assets/logo.png"
             alt="Logo"
@@ -104,7 +104,7 @@ export default function Navbar() {
           <li>
             <a
               className="hover:text-gray-500 dark:hover:text-gray-300 transition"
-              href="#top"
+              href="/"
             >
               Home
             </a>
@@ -112,7 +112,7 @@ export default function Navbar() {
           <li>
             <a
               className="hover:text-gray-500 dark:hover:text-gray-300 transition"
-              href="#about"
+              href="/about"
             >
               About me
             </a>
@@ -120,7 +120,7 @@ export default function Navbar() {
           <li>
             <a
               className="hover:text-gray-500 dark:hover:text-gray-300 transition"
-              href="#services"
+              href="/services"
             >
               Services
             </a>
@@ -128,7 +128,7 @@ export default function Navbar() {
           <li>
             <a
               className="hover:text-gray-500 dark:hover:text-gray-300 transition"
-              href="#work"
+              href="/work"
             >
               My Work
             </a>
@@ -208,22 +208,22 @@ export default function Navbar() {
           </div>
 
           <li>
-            <a href="#top" onClick={closeMenu}>
+            <a href="/" onClick={closeMenu}>
               Home
             </a>
           </li>
           <li>
-            <a href="#about" onClick={closeMenu}>
+            <a href="/about" onClick={closeMenu}>
               About me
             </a>
           </li>
           <li>
-            <a href="#services" onClick={closeMenu}>
+            <a href="/services" onClick={closeMenu}>
               Services
             </a>
           </li>
           <li>
-            <a href="#work" onClick={closeMenu}>
+            <a href="/work" onClick={closeMenu}>
               My Work
             </a>
           </li>

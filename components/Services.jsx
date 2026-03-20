@@ -7,27 +7,27 @@ const orivian = localFont({
 export default function Services() {
   const services = [
     {
-      name: "Web design",
+      name: "Web development",
       icon: "/assets/web-icon.png",
-      description: "Web development is the process of building, programming...",
+      description: "Building scalable, high-performance web applications tailored to your business needs using modern technologies.",
       link: "#",
     },
     {
       name: "Mobile app",
       icon: "/assets/mobile-icon.png",
-      description: "Web development is the process of building, programming...",
+      description: "Developing robust, cross-platform mobile applications that provide seamless user experiences on any device.",
       link: "#",
     },
     {
       name: "UI/ UX design",
       icon: "/assets/ui-icon.png",
-      description: "Web development is the process of building, programming...",
+      description: "Crafting intuitive and visually stunning user interfaces with a strong focus on maximizing usability and engagement.",
       link: "#",
     },
     {
       name: "Graphics design",
       icon: "/assets/graphics-icon.png",
-      description: "Web development is the process of building, programming...",
+      description: "Producing high-quality brand visuals and creative assets that help your business leave a lasting digital impression.",
       link: "#",
     },
   ];

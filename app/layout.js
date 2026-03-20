@@ -13,8 +13,11 @@ const ovo = Ovo({
 });
 
 export const metadata = {
-    title: "Ezekiel's Portfolio - Developer",
+    title: "Denis Ezekiel - Developer",
     description: "Denis Ezekiel is a full stack web developer based in Kampala, UG. I am a self-taught developer with 4 years of experience in multiple startUps like IonHosting and Pneuma African Foundation(PAF).",
+    icons: {
+        icon: "/assets/favicon.png",
+    },
 };
 
 export default function RootLayout({ children }) {
