@@ -89,11 +89,11 @@ export default function ServicesPage() {
             <Navbar />
 
             <main className="pt-24 pb-24 min-h-screen dark:bg-darkTheme dark:text-white">
-                <div className="w-full px-[12%]">
+                <div className="w-full px-4 sm:px-8 lg:px-[12%]">
                     {/* Header Section */}
                     <div className="text-center mb-16 mt-10">
                         <h4 className="mb-2 text-lg font-Ovo text-gray-600 dark:text-white/80">Tailored digital solutions</h4>
-                        <h2 className={`text-5xl md:text-6xl ${orivian.className} mb-6`}>
+                        <h2 className={`text-3xl sm:text-5xl md:text-6xl ${orivian.className} mb-6`}>
                             My Services
                         </h2>
                         <p className="max-w-3xl mx-auto font-Ovo text-lg leading-relaxed text-gray-700 dark:text-white/70">
@@ -103,21 +103,23 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Quick Overview Grid */}
-                    <div className="grid grid-cols-auto gap-6 my-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-10">
                         {services.map((service) => (
                             <a
                                 href={service.link}
                                 key={service.name}
-                                className="block border border-gray-300 dark:border-white/30 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white"
+                                className="block border border-gray-300 dark:border-white/30 rounded-lg px-6 sm:px-8 py-8 sm:py-10 hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white flex flex-col justify-between"
                             >
-                                <img src={service.icon} alt="" className="w-10" />
-                                <h3 className="text-lg my-4 text-gray-700 dark:text-white">
-                                    {service.name}
-                                </h3>
-                                <p className="text-sm text-gray-600 leading-5 dark:text-white/80">
-                                    {service.description}
-                                </p>
-                                <span className="flex items-center gap-2 text-sm mt-5 text-gray-900 dark:text-white">
+                                <div>
+                                    <img src={service.icon} alt="" className="w-10" />
+                                    <h3 className="text-lg my-4 text-gray-700 dark:text-white">
+                                        {service.name}
+                                    </h3>
+                                    <p className="text-sm text-gray-600 leading-5 dark:text-white/80">
+                                        {service.description}
+                                    </p>
+                                </div>
+                                <span className="flex items-center gap-2 text-sm mt-5 text-gray-900 dark:text-white font-semibold">
                                     Read more{" "}
                                     <img src="/assets/right-arrow.png" alt="" className="w-4" />
                                 </span>

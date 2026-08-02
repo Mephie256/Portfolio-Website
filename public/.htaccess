@@ -1,0 +1,19 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Force HTTPS redirect
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# If requested path exists as a file or directory, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Redirect /route to /route/ for clean trailing slash directory resolution
+RewriteCond %{REQUEST_FILENAME}.html !-f
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
+
+# Custom 404 Page
+ErrorDocument 404 /404/index.html

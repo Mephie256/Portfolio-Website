@@ -74,11 +74,11 @@ export default function WorkPage() {
             <Navbar />
 
             <main className="pt-24 pb-24 min-h-screen dark:bg-darkTheme dark:text-white">
-                <div className="w-full px-[12%]">
+                <div className="w-full px-4 sm:px-8 lg:px-[12%]">
                     {/* Header Section */}
                     <div className="text-center mb-16 mt-10">
                         <h4 className="mb-2 text-lg font-Ovo text-gray-600 dark:text-white/80">My portfolio</h4>
-                        <h2 className={`text-5xl md:text-6xl ${orivian.className} mb-6`}>
+                        <h2 className={`text-3xl sm:text-5xl md:text-6xl ${orivian.className} mb-6`}>
                             My Latest Work
                         </h2>
                         <p className="max-w-3xl mx-auto font-Ovo text-lg leading-relaxed text-gray-700 dark:text-white/70">
@@ -103,7 +103,7 @@ export default function WorkPage() {
                     </div>
 
                     {/* Featured Work Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-auto my-10 gap-x-6 gap-y-10 dark:text-black transition-all duration-500 min-h-[50vh]">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-10 gap-6 dark:text-black transition-all duration-500 min-h-[50vh]">
                         {filteredWork.map((work) => (
                             <a
                                 href={work.link || "#"}
@@ -116,13 +116,13 @@ export default function WorkPage() {
                                 {/* Overlay for better text readability */}
                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
 
-                                <div className="bg-white/95 backdrop-blur-sm w-11/12 md:w-10/12 rounded-xl border border-white/50 absolute bottom-5 left-1/2 -translate-x-1/2 py-4 px-6 flex items-center justify-between duration-500 group-hover:bottom-7">
+                                <div className="bg-white/95 backdrop-blur-sm w-11/12 md:w-10/12 rounded-xl border border-white/50 absolute bottom-5 left-1/2 -translate-x-1/2 py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between duration-500 group-hover:bottom-7">
                                     <div className="max-w-[70%]">
-                                        <h2 className="font-semibold text-lg text-gray-900 truncate">{work.name}</h2>
-                                        <p className="text-sm text-gray-600 truncate mt-1 font-Ovo">{work.description}</p>
+                                        <h2 className="font-semibold text-base sm:text-lg text-gray-900 truncate">{work.name}</h2>
+                                        <p className="text-xs sm:text-sm text-gray-600 truncate mt-1 font-Ovo">{work.description}</p>
                                     </div>
-                                    <div className="shrink-0 border rounded-full border-black/80 w-10 aspect-square flex items-center justify-center shadow-[2px_2px_0_rgba(0,0,0,0.8)] group-hover:bg-lime-300 transition-colors duration-300 bg-white">
-                                        <img src="/assets/send-icon.png" alt="" className="w-4 ml-0.5" />
+                                    <div className="shrink-0 border rounded-full border-black/80 w-8 sm:w-10 aspect-square flex items-center justify-center shadow-[2px_2px_0_rgba(0,0,0,0.8)] group-hover:bg-lime-300 transition-colors duration-300 bg-white">
+                                        <img src="/assets/send-icon.png" alt="" className="w-3.5 sm:w-4 ml-0.5" />
                                     </div>
                                 </div>
                             </a>
@@ -136,9 +136,9 @@ export default function WorkPage() {
                     )}
 
                     {/* Contact CTA */}
-                    <div className="mt-28 p-12 lg:p-16 rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-10">
+                    <div className="mt-20 sm:mt-28 p-8 sm:p-12 lg:p-16 rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
                         <div>
-                            <h3 className={`text-4xl ${orivian.className} mb-4 text-gray-900 dark:text-white`}>Have a project in mind?</h3>
+                            <h3 className={`text-2xl sm:text-4xl ${orivian.className} mb-4 text-gray-900 dark:text-white`}>Have a project in mind?</h3>
                             <p className="font-Ovo text-gray-600 dark:text-white/70 max-w-lg text-lg">
                                 Whether you need a high-performance web application, a mobile app, or stunning visual assets, I'm currently available for freelance work and new opportunities!
                             </p>

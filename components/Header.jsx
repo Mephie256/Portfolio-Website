@@ -6,16 +6,16 @@ const orivian = localFont({
 
 export default function Header() {
   return (
-    <div className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
-      <img src="/assets/profile-img.png" alt="" className="rounded-full w-32" />
-      <h3 className="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">
+    <div className="w-11/12 max-w-3xl text-center mx-auto min-h-screen pt-28 pb-16 md:pt-36 md:pb-20 flex flex-col items-center justify-center gap-4">
+      <img src="/assets/profile-img.png" alt="" className="rounded-full w-28 sm:w-32" />
+      <p className="flex items-end gap-2 text-xl md:text-2xl mb-2 font-Ovo text-gray-700 dark:text-white/90">
         Hi! I&apos;m Denis Ezekiel
         <img src="/assets/hand-icon.png" alt="" className="w-6 mb-1" />
-      </h3>
+      </p>
       <h1
-        className={`text-3xl sm:text-6xl lg:text-[66px] ${orivian.className}`}
+        className={`text-3xl sm:text-5xl lg:text-[66px] leading-tight sm:leading-tight ${orivian.className}`}
       >
-        fullstack web developer based in Uganda.
+        Denis Ezekiel — fullstack web developer based in Uganda.
       </h1>
       <p className="max-w-2xl mx-auto font-Ovo">
         I am a Fullstack developer from Kampala, UG with 4 years of experience

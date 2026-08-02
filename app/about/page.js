@@ -63,19 +63,19 @@ export default function AboutPage() {
             <Navbar />
 
             <main className="pt-24 min-h-screen dark:bg-darkTheme dark:text-white pb-20">
-                <div className="w-full px-[12%] py-10">
+                <div className="w-full px-4 sm:px-8 lg:px-[12%] py-10">
                     <h4 className="text-center mb-2 text-lg font-Ovo mt-10">Get to know me deeply</h4>
-                    <h2 className={`text-center text-5xl ${orivian.className}`}>About Me</h2>
+                    <h2 className={`text-center text-3xl sm:text-4xl lg:text-5xl ${orivian.className}`}>About Me</h2>
 
-                    <div className="flex w-full flex-col lg:flex-row items-center lg:items-start gap-20 my-20">
-                        <div className="max-w-max mx-auto relative lg:sticky lg:top-32 self-start pt-4 lg:pt-14">
+                    <div className="flex w-full flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-20 my-10 lg:my-20">
+                        <div className="max-w-max mx-auto relative lg:sticky lg:top-32 self-start pt-4 lg:pt-14 px-4 sm:px-0">
                             <img
                                 src="/assets/user-image.png"
                                 alt="Denis Ezekiel"
-                                className="w-64 sm:w-80 rounded-3xl max-w-none shadow-lg"
+                                className="w-64 sm:w-80 rounded-3xl max-w-full shadow-lg"
                             />
 
-                            <div className="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center">
+                            <div className="bg-white w-1/3 sm:w-1/2 aspect-square absolute right-2 sm:right-0 bottom-0 rounded-full translate-x-1/6 sm:translate-x-1/4 translate-y-1/4 sm:translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center">
                                 <img
                                     src="/assets/circular-text.png"
                                     alt=""

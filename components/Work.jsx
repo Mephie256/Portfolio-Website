@@ -32,9 +32,9 @@ export default function Work() {
     },
   ];
   return (
-    <div id="work" className="w-full px-[12%] py-10 scroll-mt-20">
+    <div id="work" className="w-full px-4 sm:px-8 lg:px-[12%] py-10 scroll-mt-20">
       <h4 className="text-center mb-2 text-lg font-Ovo">My portfolio</h4>
-      <h2 className={`text-center text-5xl ${orivian.className}`}>
+      <h2 className={`text-center text-3xl sm:text-4xl lg:text-5xl ${orivian.className}`}>
         My latest work
       </h2>
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
@@ -44,23 +44,23 @@ export default function Work() {
         delivering real impact.
       </p>
 
-      <div className="grid grid-cols-auto my-10 gap-5 dark:text-black">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-10 dark:text-black">
         {work.map((work) => (
           <a
             href={work.link || "#"}
             target={work.link ? "_blank" : "_self"}
             rel="noopener noreferrer"
             key={work.name}
-            className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group block mb-0"
+            className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group block mb-0 overflow-hidden shadow-sm"
             style={{ backgroundImage: `url(${work.icon})` }}
           >
-            <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-              <div>
-                <h2 className="font-semibold">{work.name}</h2>
-                <p className="text-sm text-gray-700">{work.description}</p>
+            <div className="bg-white w-11/12 sm:w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-4 sm:px-5 flex items-center justify-between duration-500 group-hover:bottom-7 border border-gray-100 shadow-sm">
+              <div className="max-w-[70%]">
+                <h2 className="font-semibold text-base sm:text-lg truncate">{work.name}</h2>
+                <p className="text-xs sm:text-sm text-gray-700 truncate">{work.description}</p>
               </div>
-              <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
-                <img src="/assets/send-icon.png" alt="" className="w-5" />
+              <div className="shrink-0 border rounded-full border-black w-8 sm:w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                <img src="/assets/send-icon.png" alt="" className="w-4 sm:w-5" />
               </div>
             </div>
           </a>

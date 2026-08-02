@@ -26,7 +26,7 @@ export default function Footer() {
           <a href="mailto:dm8143092@gmail.com">dm8143092@gmail.com</a>
         </div>
       </div>
-      <div className="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-3">
+      <div className="text-center sm:flex items-center justify-between border-t border-gray-400 mx-4 sm:mx-8 lg:mx-[10%] mt-12 py-3">
         <p>© {new Date().getFullYear()} Denis Ezekiel. All rights reserved.</p>
         <ul className="flex items-center gap-6 justify-center mt-4 sm:mt-0">
           <li>

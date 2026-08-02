@@ -21,7 +21,7 @@ const Testimonials = () => {
     ];
 
     const renderCard = (testimonial, index) => (
-        <div key={index} className="bg-white dark:bg-darkHover border border-slate-200 dark:border-white/20 hover:border-slate-300 dark:hover:border-white/40 rounded-xl p-4 shrink-0 w-[350px] transition-colors">
+        <div key={index} className="bg-white dark:bg-darkHover border border-slate-200 dark:border-white/20 hover:border-slate-300 dark:hover:border-white/40 rounded-xl p-4 shrink-0 w-[280px] sm:w-[350px] transition-colors">
             <div className="flex mb-4">
                 {Array(5).fill(0).map((_, i) => (
                     <svg key={i} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-star text-transparent fill-[#FFD700]" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
@@ -58,7 +58,7 @@ const Testimonials = () => {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <h4 className="text-center mb-2 text-lg font-Ovo dark:text-white">Testimonials</h4>
-                    <h2 className={`text-center text-5xl ${orivian.className} dark:text-white`}>
+                    <h2 className={`text-center text-3xl sm:text-4xl lg:text-5xl ${orivian.className} dark:text-white`}>
                         What people are saying
                     </h2>
                     <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo dark:text-neutral-300">
@@ -69,8 +69,8 @@ const Testimonials = () => {
                 <div className="space-y-6 overflow-hidden">
                     {rows.map((row, rowIndex) => (
                         <div key={rowIndex} className="relative w-full">
-                            <div className="absolute left-0 top-0 bottom-0 w-28 bg-gradient-to-r from-[#FAFAFA] dark:from-darkTheme to-transparent z-10 pointer-events-none"></div>
-                            <div className="absolute right-0 top-0 bottom-0 w-28 bg-gradient-to-l from-[#FAFAFA] dark:from-darkTheme to-transparent z-10 pointer-events-none"></div>
+                            <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-[#FAFAFA] dark:from-darkTheme to-transparent z-10 pointer-events-none"></div>
+                            <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-[#FAFAFA] dark:from-darkTheme to-transparent z-10 pointer-events-none"></div>
 
                             <div className={`flex gap-6 w-max ${row.className}`}>
                                 {[...testimonials.slice(row.start, row.end), ...testimonials.slice(row.start, row.end), ...testimonials.slice(row.start, row.end)].map((testimonial, index) =>

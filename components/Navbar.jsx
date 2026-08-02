@@ -7,10 +7,14 @@ export default function Navbar() {
   const navLinkRef = useRef();
 
   const openMenu = () => {
-    sideMenuRef.current.style.transform = "translateX(-16rem)";
+    if (sideMenuRef.current) {
+      sideMenuRef.current.style.transform = "translateX(-16rem)";
+    }
   };
   const closeMenu = () => {
-    sideMenuRef.current.style.transform = "translateX(16rem)";
+    if (sideMenuRef.current) {
+      sideMenuRef.current.style.transform = "translateX(16rem)";
+    }
   };
   const toggleTheme = () => {
     document.documentElement.classList.toggle("dark");
@@ -23,8 +27,9 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (scrollY > 50) {
+    const handleScroll = () => {
+      if (!navRef.current || !navLinkRef.current) return;
+      if (window.scrollY > 50) {
         navRef.current.classList.add(
           "bg-white",
           "bg-opacity-50",
@@ -59,7 +64,9 @@ export default function Navbar() {
           "dark:bg-transparent",
         );
       }
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll);
 
     // -------- light mode and dark mode -----------
 
@@ -72,6 +79,10 @@ export default function Navbar() {
     } else {
       document.documentElement.classList.remove("dark");
     }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -99,7 +110,7 @@ export default function Navbar() {
 
         <ul
           ref={navLinkRef}
-          className="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo dark:border dark:border-white/30 dark:bg-transparent "
+          className="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-6 lg:px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo dark:border dark:border-white/30 dark:bg-transparent "
         >
           <li>
             <a
