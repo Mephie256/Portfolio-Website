@@ -15,6 +15,14 @@ export default function WorkPage() {
 
     const allWork = [
         {
+            name: "CalMax AI App",
+            icon: "/assets/calmax.png",
+            description: "AI-powered calorie tracker",
+            category: "Mobile",
+            link: "https://drive.google.com/file/d/1W8MZJyVzFllQNt8OBA8hOQuDWrzroDtX/view?usp=sharing",
+            featured: true
+        },
+        {
             name: "Unlonely Ai",
             icon: "/assets/work-1.png",
             description: "Your kind AI companion",

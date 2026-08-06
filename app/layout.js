@@ -15,11 +15,11 @@ const ovo = Ovo({
 export const metadata = {
     metadataBase: new URL("https://denisezekiel.com"),
     title: {
-        default: "Denis Ezekiel | Fullstack Developer & Video Editor",
+        default: "Denis Ezekiel | Fullstack Developer",
         template: "%s | Denis Ezekiel",
     },
     description:
-        "Denis Ezekiel is a professional Fullstack Developer and Video Editor based in Kampala, Uganda. Specializing in modern web applications, mobile apps, UI/UX design, and creative media production.",
+        "Denis Ezekiel is a Fullstack Developer based in Kampala, Uganda. Building modern web apps, mobile apps, and UI/UX experiences — with creative video editing as a bonus skill.",
     keywords: [
         "Denis Ezekiel",
         "Fullstack Developer Uganda",
@@ -50,11 +50,11 @@ export const metadata = {
         },
     },
     openGraph: {
-        title: "Denis Ezekiel | Fullstack Developer & Video Editor",
+        title: "Denis Ezekiel | Fullstack Developer",
         description:
-            "Portfolio of Denis Ezekiel - Fullstack Web & Mobile Developer and Creative Video Editor based in Kampala, UG.",
+            "Denis Ezekiel is a Fullstack Developer based in Kampala, Uganda — specializing in web apps, mobile apps, and UI/UX. Video editing is an additional creative skill.",
         url: "https://denisezekiel.com",
-        siteName: "Denis Ezekiel Portfolio",
+        siteName: "Denis Ezekiel",
         locale: "en_US",
         type: "website",
         images: [
@@ -69,14 +69,18 @@ export const metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Denis Ezekiel | Fullstack Developer & Video Editor",
+        title: "Denis Ezekiel | Fullstack Developer",
         description:
-            "Fullstack Web & Mobile Developer based in Kampala, UG with 4+ years of experience.",
+            "Fullstack Developer based in Kampala, Uganda — 4+ years building web & mobile apps. Video editing as a creative addon.",
         images: ["https://denisezekiel.com/assets/og-image.png"],
     },
     icons: {
-        icon: "/assets/favicon.png",
-        apple: "/assets/favicon.png",
+        icon: [
+            { url: "/icon.png", type: "image/png" },
+            { url: "/assets/favicon.png", type: "image/png" },
+        ],
+        apple: "/icon.png",
+        shortcut: "/icon.png",
     },
     verification: {
         google: "googled639091f8d6e99d0",
@@ -84,12 +88,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-    const jsonLd = {
+    const personJsonLd = {
         "@context": "https://schema.org",
         "@type": "Person",
         name: "Denis Ezekiel",
         url: "https://denisezekiel.com",
-        jobTitle: "Fullstack Developer & Video Editor",
+        image: "https://denisezekiel.com/assets/profile-img.png",
+        jobTitle: "Fullstack Developer",
         worksFor: [
             {
                 "@type": "Organization",
@@ -103,8 +108,9 @@ export default function RootLayout({ children }) {
         sameAs: [
             "https://github.com/Mephie256",
             "https://www.facebook.com/denisezel17",
-            "https://www.instagram.com/dm8143092/",
+            "https://www.instagram.com/denis_ezekiel_bhika/",
             "https://www.tiktok.com/@incredboify",
+            "https://www.linkedin.com/in/denis-ezekiel-499b71290/",
         ],
         knowsAbout: [
             "Fullstack Web Development",
@@ -117,11 +123,56 @@ export default function RootLayout({ children }) {
         ],
     };
 
+    const websiteJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Denis Ezekiel",
+        url: "https://denisezekiel.com",
+        description:
+            "Denis Ezekiel is a Fullstack Developer based in Kampala, Uganda — building web apps, mobile apps, and UI/UX experiences. Video editing is a creative addon skill.",
+        author: {
+            "@type": "Person",
+            name: "Denis Ezekiel",
+        },
+        potentialAction: {
+            "@type": "SearchAction",
+            target: {
+                "@type": "EntryPoint",
+                urlTemplate:
+                    "https://denisezekiel.com/?q={search_term_string}",
+            },
+            "query-input": "required name=search_term_string",
+        },
+        hasPart: [
+            {
+                "@type": "WebPage",
+                name: "About",
+                url: "https://denisezekiel.com/about",
+                description:
+                    "Learn about Denis Ezekiel - Fullstack Developer & Video Editor based in Kampala, Uganda.",
+            },
+            {
+                "@type": "WebPage",
+                name: "Services",
+                url: "https://denisezekiel.com/services",
+                description:
+                    "Web development, mobile apps, UI/UX design, and video editing services by Denis Ezekiel.",
+            },
+            {
+                "@type": "WebPage",
+                name: "Work & Projects",
+                url: "https://denisezekiel.com/work",
+                description:
+                    "Portfolio projects and work samples by Denis Ezekiel.",
+            },
+        ],
+    };
+
     return (
         <html lang="en">
             <head>
-                <meta property="og:title" content="Denis Ezekiel | Fullstack Developer & Video Editor" />
-                <meta property="og:description" content="Denis Ezekiel is a professional Fullstack Developer and Video Editor based in Kampala, Uganda." />
+                <meta property="og:title" content="Denis Ezekiel | Fullstack Developer" />
+                <meta property="og:description" content="Denis Ezekiel is a Fullstack Developer based in Kampala, Uganda — building web & mobile apps. Video editing as a creative addon." />
                 <meta property="og:image" content="https://denisezekiel.com/assets/og-image.png" />
                 <meta property="og:image:secure_url" content="https://denisezekiel.com/assets/og-image.png" />
                 <meta property="og:image:type" content="image/png" />
@@ -129,16 +180,24 @@ export default function RootLayout({ children }) {
                 <meta property="og:image:height" content="500" />
                 <meta property="og:url" content="https://denisezekiel.com/" />
                 <meta property="og:type" content="website" />
-                <meta property="og:site_name" content="Denis Ezekiel Portfolio" />
+                <meta property="og:site_name" content="Denis Ezekiel" />
 
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Denis Ezekiel | Fullstack Developer & Video Editor" />
-                <meta name="twitter:description" content="Fullstack Web & Mobile Developer based in Kampala, UG with 4+ years of experience." />
+                <meta name="twitter:title" content="Denis Ezekiel | Fullstack Developer" />
+                <meta name="twitter:description" content="Fullstack Developer based in Kampala, Uganda — 4+ years building web & mobile apps. Video editing as a creative addon." />
                 <meta name="twitter:image" content="https://denisezekiel.com/assets/og-image.png" />
 
                 <script
                     type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(personJsonLd),
+                    }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(websiteJsonLd),
+                    }}
                 />
             </head>
             <body className="font-Outfit leading-8 dark:bg-darkTheme dark:text-white overflow-x-hidden w-full relative">

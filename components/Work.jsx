@@ -7,17 +7,18 @@ const orivian = localFont({
 export default function Work() {
   const work = [
     {
+      name: "CalMax AI App",
+      icon: "/assets/calmax.png",
+      description: "AI-powered calorie tracker",
+      link: "https://drive.google.com/file/d/1W8MZJyVzFllQNt8OBA8hOQuDWrzroDtX/view?usp=sharing",
+    },
+    {
       name: "Unlonely Ai",
       icon: "/assets/work-1.png",
       description: "Your kind AI companion",
       link: "https://unlonely.netlify.app/",
     },
-    {
-      name: "Imprintly",
-      icon: "/assets/work-2.png",
-      description: "Text-behind-subject effects.",
-      link: "https://imprintly.netlify.app/",
-    },
+
     {
       name: "Ion Radios App",
       icon: "/assets/work-3.png",
