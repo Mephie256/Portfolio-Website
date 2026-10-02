@@ -18,71 +18,80 @@ export default function Work() {
       description: "Your kind AI companion",
       link: "https://unlonely.netlify.app/",
     },
-
     {
       name: "Ion Radios App",
       icon: "/assets/work-3.png",
-      description: "Mobile App",
+      description: "Live Radio Streaming Mobile App",
       link: "",
     },
     {
       name: "3D Site",
       icon: "/assets/work-4.png",
-      description: "Spylt Clone",
+      description: "Interactive GSAP 3D Experience",
       link: "https://gsapproj.netlify.app/",
     },
   ];
-  return (
-    <div id="work" className="w-full px-4 sm:px-8 lg:px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg font-Ovo">My portfolio</h4>
-      <h2 className={`text-center text-3xl sm:text-4xl lg:text-5xl ${orivian.className}`}>
-        My latest work
-      </h2>
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
-        My latest work showcases innovative software solutions, modern graphic
-        designs, and high-quality video edits crafted with precision. Each
-        project reflects creativity, technical expertise, and a strong focus on
-        delivering real impact.
-      </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-10 dark:text-black">
-        {work.map((work) => (
+  return (
+    <section id="work" className="w-full px-4 sm:px-8 lg:px-[12%] py-16 scroll-mt-24">
+      <div className="text-center mb-10">
+        <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
+          My portfolio
+        </h4>
+        <h2 className={`text-center text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black dark:text-white ${orivian.className}`}>
+          My latest work
+        </h2>
+        <p className="text-center max-w-2xl mx-auto mt-4 font-Ovo text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          A curated selection of modern web apps, mobile solutions, and creative projects crafted with performance, clean aesthetics, and real user value.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-10">
+        {work.map((item) => (
           <a
-            href={work.link || "#"}
-            target={work.link ? "_blank" : "_self"}
+            href={item.link || "#"}
+            target={item.link ? "_blank" : "_self"}
             rel="noopener noreferrer"
-            key={work.name}
-            className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group block mb-0 overflow-hidden shadow-sm"
-            style={{ backgroundImage: `url(${work.icon})` }}
+            key={item.name}
+            className="aspect-square bg-no-repeat bg-cover bg-center rounded-2xl relative cursor-pointer group block overflow-hidden border-2 border-black dark:border-white shadow-neo dark:shadow-neo-white hover:-translate-y-2 hover:shadow-neo-lg dark:hover:shadow-neo-white-lg transition-all duration-200"
+            style={{ backgroundImage: `url(${item.icon})` }}
           >
-            <div className="bg-white w-11/12 sm:w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-4 sm:px-5 flex items-center justify-between duration-500 group-hover:bottom-7 border border-gray-100 shadow-sm">
+            {/* Neobrutalist Floating Card Pill */}
+            <div className="bg-white dark:bg-[#11001F] w-[90%] rounded-xl absolute bottom-4 left-1/2 -translate-x-1/2 py-3 px-4 flex items-center justify-between duration-300 group-hover:bottom-6 border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm">
               <div className="max-w-[70%]">
-                <h2 className="font-semibold text-base sm:text-lg truncate">{work.name}</h2>
-                <p className="text-xs sm:text-sm text-gray-700 truncate">{work.description}</p>
+                <h3 className="font-Outfit font-bold text-base sm:text-lg text-black dark:text-white truncate">
+                  {item.name}
+                </h3>
+                <p className="text-xs sm:text-sm font-Outfit text-gray-700 dark:text-gray-300 truncate">
+                  {item.description}
+                </p>
               </div>
-              <div className="shrink-0 border rounded-full border-black w-8 sm:w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+              <div className="shrink-0 border-2 border-black rounded-full w-9 sm:w-10 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] bg-lime-300 group-hover:bg-lime-400 transition-colors">
                 <img src="/assets/send-icon.png" alt="" className="w-4 sm:w-5" />
               </div>
             </div>
           </a>
         ))}
       </div>
-      <a
-        href="#"
-        className="w-max flex items-center justify-center gap-2 text-gray-700 border border-gray-300 dark:border-white/25 hover:bg-slate-100/70 dark:hover:bg-darkHover rounded-full py-2 px-8 mx-auto my-20 duration-300 dark:text-white"
-      >
-        Show more
-        <img
-          src="/assets/right-arrow-bold.png"
-          alt=""
-          className="w-4 dark:hidden"
-        />
-        <img
-          src="/assets/right-arrow-bold-dark.png"
-          alt=""
-          className="w-4 hidden dark:block"
-        />
-      </a>
-    </div>
+
+      <div className="text-center my-12">
+        <a
+          href="/work"
+          className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-black dark:border-white px-8 py-3 bg-white dark:bg-darkHover text-black dark:text-white font-Outfit font-bold text-base shadow-neo dark:shadow-neo-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-sm dark:hover:shadow-neo-white-sm active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all duration-150"
+        >
+          Show more projects
+          <img
+            src="/assets/right-arrow-bold.png"
+            alt=""
+            className="w-4 dark:hidden"
+          />
+          <img
+            src="/assets/right-arrow-bold-dark.png"
+            alt=""
+            className="w-4 hidden dark:block"
+          />
+        </a>
+      </div>
+    </section>
   );
 }

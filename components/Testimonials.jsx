@@ -21,25 +21,27 @@ const Testimonials = () => {
     ];
 
     const renderCard = (testimonial, index) => (
-        <div key={index} className="bg-white dark:bg-darkHover border border-slate-200 dark:border-white/20 hover:border-slate-300 dark:hover:border-white/40 rounded-xl p-4 shrink-0 w-[280px] sm:w-[350px] transition-colors">
-            <div className="flex mb-4">
+        <div key={index} className="bg-white dark:bg-[#11001F] border-2 border-black dark:border-white rounded-2xl p-5 shrink-0 w-[290px] sm:w-[360px] shadow-neo dark:shadow-neo-white transition-all m-1">
+            <div className="flex mb-3 gap-1">
                 {Array(5).fill(0).map((_, i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-star text-transparent fill-[#FFD700]" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                    <svg key={i} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FBBF24" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-star" aria-hidden="true">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
                 ))}
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300 text-sm mb-6 font-Outfit">{testimonial.text}</p>
+            <p className="text-gray-800 dark:text-gray-200 text-sm mb-5 font-Outfit leading-relaxed">&ldquo;{testimonial.text}&rdquo;</p>
             <div className="flex items-center gap-3">
-                <img src={testimonial.image} alt={testimonial.name} className="w-11 h-11 rounded-full object-cover" />
+                <img src={testimonial.image} alt={testimonial.name} className="w-10 h-10 rounded-full object-cover border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm" />
                 <div>
-                    <p className="font-medium text-neutral-800 dark:text-white text-sm font-Outfit">{testimonial.name}</p>
-                    <p className="text-neutral-600 dark:text-neutral-400 text-sm font-Outfit">{testimonial.role}</p>
+                    <p className="font-bold text-black dark:text-white text-sm font-Outfit">{testimonial.name}</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs font-Outfit">{testimonial.role}</p>
                 </div>
             </div>
         </div>
     );
 
     return (
-        <section id="testimonials" className="bg-[#FAFAFA] dark:bg-transparent py-16 px-4">
+        <section id="testimonials" className="pt-28 pb-20 px-4 scroll-mt-36">
             <style>
                 {`
                     @keyframes scroll {
@@ -56,23 +58,26 @@ const Testimonials = () => {
                 `}
             </style>
             <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-16">
-                    <h4 className="text-center mb-2 text-lg font-Ovo dark:text-white">Testimonials</h4>
-                    <h2 className={`text-center text-3xl sm:text-4xl lg:text-5xl ${orivian.className} dark:text-white`}>
+                <div className="text-center mb-14">
+                    <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
+                        Testimonials
+                    </h4>
+                    <h2 className={`text-center text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black dark:text-white ${orivian.className}`}>
                         What people are saying
                     </h2>
-                    <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo dark:text-neutral-300">
-                        Real feedback from founders, designers, and teams I have worked with to build amazing products.
+                    <p className="text-center max-w-2xl mx-auto mt-4 font-Ovo text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Real feedback from founders, designers, and engineering leaders I have collaborated with to build impactful products.
                     </p>
                 </div>
 
-                <div className="space-y-6 overflow-hidden">
+                <div className="space-y-8 overflow-hidden py-4">
                     {rows.map((row, rowIndex) => (
-                        <div key={rowIndex} className="relative w-full">
-                            <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-[#FAFAFA] dark:from-darkTheme to-transparent z-10 pointer-events-none"></div>
-                            <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-[#FAFAFA] dark:from-darkTheme to-transparent z-10 pointer-events-none"></div>
+                        <div key={rowIndex} className="relative w-full overflow-hidden">
+                            {/* Seamless fade masks so cards are never cropped at the edges */}
+                            <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-r from-white dark:from-[#11001F] to-transparent z-20 pointer-events-none"></div>
+                            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-l from-white dark:from-[#11001F] to-transparent z-20 pointer-events-none"></div>
 
-                            <div className={`flex gap-6 w-max ${row.className}`}>
+                            <div className={`flex gap-6 w-max py-3 ${row.className}`}>
                                 {[...testimonials.slice(row.start, row.end), ...testimonials.slice(row.start, row.end), ...testimonials.slice(row.start, row.end)].map((testimonial, index) =>
                                     renderCard(testimonial, index)
                                 )}

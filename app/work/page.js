@@ -81,29 +81,32 @@ export default function WorkPage() {
             <LenisScroll />
             <Navbar />
 
-            <main className="pt-24 pb-24 min-h-screen dark:bg-darkTheme dark:text-white">
+            <main className="pt-28 pb-24 min-h-screen dark:bg-darkTheme dark:text-white">
                 <div className="w-full px-4 sm:px-8 lg:px-[12%]">
                     {/* Header Section */}
-                    <div className="text-center mb-16 mt-10">
-                        <h4 className="mb-2 text-lg font-Ovo text-gray-600 dark:text-white/80">My portfolio</h4>
-                        <h2 className={`text-3xl sm:text-5xl md:text-6xl ${orivian.className} mb-6`}>
+                    <div className="text-center mb-16 mt-8">
+                        <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
+                            My portfolio
+                        </h4>
+                        <h1 className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-black dark:text-white mb-4 ${orivian.className}`}>
                             My Latest Work
-                        </h2>
-                        <p className="max-w-3xl mx-auto font-Ovo text-lg leading-relaxed text-gray-700 dark:text-white/70">
+                        </h1>
+                        <p className="max-w-3xl mx-auto font-Ovo text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                             A curated showcase of innovative software solutions, modern graphic designs, and high-quality video edits. Every project reflects deep technical expertise and professional creativity aimed at real impact.
                         </p>
                     </div>
 
-                    {/* Filter Navigation */}
-                    <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
+                    {/* Neobrutalist Category Filter Tabs */}
+                    <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-14">
                         {categories.map((cat) => (
                             <button
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
-                                className={`px-6 py-2 rounded-full font-Ovo text-sm transition-all duration-300 border ${activeCategory === cat
-                                        ? "bg-gray-900 border-gray-900 text-white dark:bg-white dark:border-white dark:text-gray-900 shadow-md"
-                                        : "bg-white border-gray-300 text-gray-700 hover:bg-gray-50 dark:bg-transparent dark:border-white/20 dark:text-white/80 dark:hover:bg-white/5"
-                                    }`}
+                                className={`px-6 py-2.5 rounded-full font-Outfit font-bold text-sm transition-all duration-150 border-2 border-black dark:border-white cursor-pointer ${
+                                    activeCategory === cat
+                                        ? "bg-green-500 text-black shadow-neo dark:shadow-neo-white"
+                                        : "bg-white dark:bg-darkTheme text-black dark:text-white shadow-neo-sm dark:shadow-neo-white-sm hover:translate-x-[1px] hover:translate-y-[1px]"
+                                }`}
                             >
                                 {cat}
                             </button>
@@ -111,26 +114,27 @@ export default function WorkPage() {
                     </div>
 
                     {/* Featured Work Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-10 gap-6 dark:text-black transition-all duration-500 min-h-[50vh]">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-10 gap-7 transition-all duration-300 min-h-[50vh]">
                         {filteredWork.map((work) => (
                             <a
                                 href={work.link || "#"}
                                 target={work.link ? "_blank" : "_self"}
                                 rel="noopener noreferrer"
                                 key={work.name}
-                                className="aspect-square bg-no-repeat bg-cover bg-center rounded-2xl relative cursor-pointer group block mb-0 overflow-hidden shadow-sm hover:shadow-xl dark:hover:shadow-[0_10px_30px_rgba(255,255,255,0.1)] transition-all duration-500 hover:-translate-y-2"
+                                className="aspect-square bg-no-repeat bg-cover bg-center rounded-2xl relative cursor-pointer group block mb-0 overflow-hidden border-2 border-black dark:border-white shadow-neo dark:shadow-neo-white hover:-translate-y-2 hover:shadow-neo-lg dark:hover:shadow-neo-white-lg transition-all duration-200"
                                 style={{ backgroundImage: `url(${work.icon})` }}
                             >
-                                {/* Overlay for better text readability */}
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-
-                                <div className="bg-white/95 backdrop-blur-sm w-11/12 md:w-10/12 rounded-xl border border-white/50 absolute bottom-5 left-1/2 -translate-x-1/2 py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between duration-500 group-hover:bottom-7">
+                                <div className="bg-white dark:bg-[#11001F] w-[90%] rounded-xl absolute bottom-4 left-1/2 -translate-x-1/2 py-3.5 px-4 sm:px-5 flex items-center justify-between duration-300 group-hover:bottom-6 border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm">
                                     <div className="max-w-[70%]">
-                                        <h2 className="font-semibold text-base sm:text-lg text-gray-900 truncate">{work.name}</h2>
-                                        <p className="text-xs sm:text-sm text-gray-600 truncate mt-1 font-Ovo">{work.description}</p>
+                                        <h3 className="font-Outfit font-bold text-base sm:text-lg text-black dark:text-white truncate">
+                                            {work.name}
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 truncate mt-0.5 font-Outfit">
+                                            {work.description}
+                                        </p>
                                     </div>
-                                    <div className="shrink-0 border rounded-full border-black/80 w-8 sm:w-10 aspect-square flex items-center justify-center shadow-[2px_2px_0_rgba(0,0,0,0.8)] group-hover:bg-lime-300 transition-colors duration-300 bg-white">
-                                        <img src="/assets/send-icon.png" alt="" className="w-3.5 sm:w-4 ml-0.5" />
+                                    <div className="shrink-0 border-2 border-black rounded-full w-9 sm:w-10 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition-colors bg-white">
+                                        <img src="/assets/send-icon.png" alt="" className="w-4 sm:w-5" />
                                     </div>
                                 </div>
                             </a>
@@ -138,17 +142,19 @@ export default function WorkPage() {
                     </div>
 
                     {filteredWork.length === 0 && (
-                        <div className="text-center py-20 font-Ovo text-gray-500 dark:text-white/60 text-lg">
-                            No projects found in this category right now. Connect with me to build one!
+                        <div className="text-center py-20 font-Outfit text-gray-500 dark:text-gray-400 text-lg">
+                            No projects found in this category right now.
                         </div>
                     )}
 
                     {/* Contact CTA */}
-                    <div className="mt-20 sm:mt-28 p-8 sm:p-12 lg:p-16 rounded-3xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
+                    <div className="mt-20 sm:mt-28 p-8 sm:p-12 lg:p-14 rounded-3xl bg-white dark:bg-darkTheme border-2 border-black dark:border-white shadow-neo-lg dark:shadow-neo-white-lg flex flex-col md:flex-row items-center justify-between gap-8">
                         <div>
-                            <h3 className={`text-2xl sm:text-4xl ${orivian.className} mb-4 text-gray-900 dark:text-white`}>Have a project in mind?</h3>
-                            <p className="font-Ovo text-gray-600 dark:text-white/70 max-w-lg text-lg">
-                                Whether you need a high-performance web application, a mobile app, or stunning visual assets, I'm currently available for freelance work and new opportunities!
+                            <h3 className={`text-2xl sm:text-4xl font-bold text-black dark:text-white mb-3 ${orivian.className}`}>
+                                Have a project in mind?
+                            </h3>
+                            <p className="font-Ovo text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-lg leading-relaxed">
+                                Whether you need a high-performance web application, a mobile app, or stunning visual assets, I&apos;m ready to collaborate!
                             </p>
                         </div>
                         <div className="shrink-0">
@@ -156,10 +162,10 @@ export default function WorkPage() {
                                 href="https://wa.me/256763731276"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 px-8 py-3.5 bg-green-500 hover:bg-green-600 text-white rounded-full font-semibold transition-all shadow-[0_4px_20px_rgba(34,197,94,0.3)] hover:shadow-[0_4px_25px_rgba(34,197,94,0.5)] hover:-translate-y-1"
+                                className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-green-500 hover:bg-green-400 text-black border-2 border-black rounded-full font-Outfit font-bold text-base shadow-neo hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-sm active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all"
                             >
-                                Let's Build Together
-                                <img src="/assets/right-arrow-white.png" alt="" className="w-5" />
+                                Let&apos;s Build Together
+                                <img src="/assets/right-arrow.png" alt="" className="w-4" />
                             </a>
                         </div>
                     </div>

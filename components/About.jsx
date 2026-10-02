@@ -18,7 +18,7 @@ export default function About() {
       name: "Languages",
       icon1: "/assets/code-icon.png",
       icon2: "/assets/code-icon-dark.png",
-      description: "Flutter, Php, JavaScript React Js, Next Js",
+      description: "Flutter, PHP, JavaScript, React.js, Next.js",
     },
     {
       name: "Education",
@@ -30,80 +30,93 @@ export default function About() {
       name: "Projects",
       icon1: "/assets/project-icon.png",
       icon2: "/assets/project-icon-dark.png",
-      description: "Built more than 5 projects",
+      description: "Built more than 15+ live products",
     },
   ];
-  return (
-    <div id="about" className="w-full px-4 sm:px-8 lg:px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg font-Ovo">Introduction</h4>
-      <h2 className={`text-center text-3xl sm:text-4xl lg:text-5xl ${orivian.className}`}>About me</h2>
 
-      <div className="flex w-full flex-col lg:flex-row items-center gap-12 lg:gap-20 my-10 lg:my-20">
-        <div className="max-w-max mx-auto relative px-4 sm:px-0">
+  return (
+    <section id="about" className="w-full px-4 sm:px-8 lg:px-[12%] py-16 scroll-mt-24">
+      <div className="text-center mb-10">
+        <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
+          Introduction
+        </h4>
+        <h2 className={`text-center text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black dark:text-white ${orivian.className}`}>
+          About me
+        </h2>
+      </div>
+
+      <div className="flex w-full flex-col lg:flex-row items-center gap-14 lg:gap-20 my-8 lg:my-14">
+        {/* Photo Container with Neobrutalist Offset Card Backing in Green (exact match to user mockup) */}
+        <div className="relative max-w-max mx-auto px-4 sm:px-0 mb-6 lg:mb-0">
+          <div className="absolute inset-0 translate-x-3.5 translate-y-3.5 sm:translate-x-4 sm:translate-y-4 bg-[#22c55e] rounded-3xl border-[2.5px] border-black dark:border-white"></div>
           <img
             src="/assets/user-image.png"
-            alt=""
-            className="w-64 sm:w-80 rounded-3xl max-w-full"
+            alt="Denis Ezekiel"
+            className="relative z-10 w-64 sm:w-80 rounded-3xl border-[2.5px] border-black dark:border-white object-cover max-w-full bg-white dark:bg-darkTheme"
           />
 
-          <div className="bg-white w-1/3 sm:w-1/2 aspect-square absolute right-2 sm:right-0 bottom-0 rounded-full translate-x-1/6 sm:translate-x-1/4 translate-y-1/4 sm:translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center">
-            <img
-              src="/assets/circular-text.png"
-              alt=""
-              className="w-full animate-spin_slow"
-            />
-            <img
-              src="/assets/dev-icon.png"
-              alt=""
-              className="w-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            />
+          {/* Circular Badge: FRONT-END WEB DEVELOPER with 😎 (as shown in second image) */}
+          <div className="z-20 bg-white dark:bg-darkTheme border-[2.5px] border-black dark:border-white shadow-[3px_3px_0px_#000] dark:shadow-[3px_3px_0px_#fff] w-28 sm:w-36 aspect-square absolute -right-3 sm:-right-5 -bottom-3 sm:-bottom-5 rounded-full flex items-center justify-center p-1">
+            <svg viewBox="0 0 100 100" className="w-full h-full animate-spin_slow">
+              <path id="aboutCirclePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+              <text className="text-[8.5px] uppercase font-Outfit font-bold tracking-[1.8px] fill-black dark:fill-white">
+                <textPath href="#aboutCirclePath" startOffset="50%" textAnchor="middle">
+                  FRONT-END WEB DEVELOPER •
+                </textPath>
+              </text>
+            </svg>
+            <span className="text-2xl sm:text-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none">
+              😎
+            </span>
           </div>
         </div>
+
+        {/* Content & Info Cards */}
         <div className="flex-1 text-center sm:text-left">
-          <p className="mb-10 max-w-2xl mx-auto sm:mx-0 font-Ovo">
-            I am an experienced Fullstack Developer and Video Editor/Graphics
-            Designer with over a 4+ of professional expertise in the field.
-            Throughout my career, I have had the privilege of collaborating with
-            prestigious organizations, contributing to their success and growth.
+          <p className="mb-8 max-w-2xl mx-auto sm:mx-0 font-Ovo text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            I am an experienced Fullstack Developer and Video Editor / Creative Designer with over 4+ years of professional expertise. Throughout my journey, I have had the privilege of collaborating with forward-thinking startups and teams, helping transform bold ideas into rock-solid, high-converting digital realities.
           </p>
 
-          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto sm:mx-0">
-            {data.map((data) => (
+          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-2xl mx-auto sm:mx-0">
+            {data.map((item) => (
               <li
-                key={data.name}
-                className="border border-gray-300 dark:border-white/30 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:hover:shadow-white/80 dark:hover:bg-darkHover/50"
+                key={item.name}
+                className="border-2 border-black dark:border-white rounded-2xl p-5 bg-white dark:bg-darkTheme shadow-neo dark:shadow-neo-white cursor-pointer hover:-translate-y-1.5 hover:shadow-neo-lg dark:hover:shadow-neo-white-lg transition-all duration-200"
               >
-                <img src={data.icon1} alt="" className="w-7 mt-3 dark:hidden" />
+                <img src={item.icon1} alt="" className="w-7 mt-1 dark:hidden" />
                 <img
-                  src={data.icon2}
+                  src={item.icon2}
                   alt=""
-                  className="w-7 mt-3 hidden dark:block"
+                  className="w-7 mt-1 hidden dark:block"
                 />
-                <h3 className="my-4 font-semibold text-gray-700 dark:text-white">
-                  {data.name}
+                <h3 className="my-3 font-Outfit font-bold text-gray-900 dark:text-white text-base">
+                  {item.name}
                 </h3>
-                <p className="text-gray-600 text-sm dark:text-white/80">
-                  {data.description}
+                <p className="text-gray-700 text-sm dark:text-gray-300 font-Outfit">
+                  {item.description}
                 </p>
               </li>
             ))}
           </ul>
-          <h4 className="my-6 text-gray-700 font-Ovo dark:text-white/80">
-            Tools i use
+
+          <h4 className="my-6 text-gray-900 dark:text-white font-Outfit font-bold text-base flex items-center gap-2 justify-center sm:justify-start">
+            <span className="w-2.5 h-2.5 rounded-full bg-green-500 border border-black inline-block"></span>
+            Tools I use daily
           </h4>
 
-          <ul className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-5">
+          <ul className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4">
             {tools.map((tool) => (
               <li
                 key={tool.name}
-                className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-300 dark:border-white/30 rounded-lg cursor-pointer hover:-translate-y-1 duration-500"
+                className="flex items-center justify-center w-12 sm:w-14 aspect-square border-2 border-black dark:border-white rounded-xl bg-white dark:bg-darkHover shadow-neo-sm dark:shadow-neo-white-sm cursor-pointer hover:-translate-y-1 hover:shadow-neo dark:hover:shadow-neo-white transition-all duration-200"
+                title={tool.name}
               >
-                <img src={tool.icon} alt={tool.name} className="w-5 sm:w-7" />
+                <img src={tool.icon} alt={tool.name} className="w-6 sm:w-7" />
               </li>
             ))}
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

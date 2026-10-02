@@ -13,27 +13,30 @@ export default function Contact() {
         const hCaptcha = event.target.querySelector('textarea[name=h-captcha-response]')?.value;
         if (!hCaptcha) {
             setResult("Please fill out captcha field");
-            return
+            return;
         }
         setResult("Sending....");
         const formData = new FormData(event.target);
 
         // ----- Enter your Web3 Forms Access key below---------
-
         formData.append("access_key", "--- enter your access key here-------");
 
-        const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        }).then((res) => res.json());
+        try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            }).then((res) => res.json());
 
-        if (res.success) {
-            console.log("Success", res);
-            setResult(res.message);
-            event.target.reset();
-        } else {
-            console.log("Error", res);
-            setResult(res.message);
+            if (res.success) {
+                console.log("Success", res);
+                setResult(res.message);
+                event.target.reset();
+            } else {
+                console.log("Error", res);
+                setResult(res.message);
+            }
+        } catch (err) {
+            setResult("Something went wrong. Please reach out via WhatsApp or email.");
         }
     };
 
@@ -78,30 +81,81 @@ export default function Contact() {
     useEffect(() => {
         CaptchaLoader();
     }, []);
+
     return (
-        <div id="contact" className="w-full px-4 sm:px-8 lg:px-[12%] py-10 scroll-mt-20 bg-[url('/assets/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center dark:bg-none">
+        <section id="contact" className="w-full px-4 sm:px-8 lg:px-[12%] py-20 scroll-mt-24">
+            <div className="text-center mb-10">
+                <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
+                    Connect with me
+                </h4>
+                <h2 className={`text-center text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black dark:text-white ${orivian.className}`}>
+                    Get in touch
+                </h2>
+                <p className="text-center max-w-2xl mx-auto mt-4 font-Ovo text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Have an idea, project, or want to collaborate? Send a message below or contact me directly via WhatsApp.
+                </p>
+            </div>
 
-            <h4 className="text-center mb-2 text-lg font-Ovo">Connect with me</h4>
-            <h2 className={`text-center text-3xl sm:text-4xl lg:text-5xl ${orivian.className}`}>Get in touch</h2>
-            <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">I&apos;d love to hear from you! If you have any questions, comments or feedback, please use the form below.</p>
+            <form onSubmit={onSubmit} className="max-w-2xl mx-auto border-2 border-black dark:border-white rounded-3xl p-6 sm:p-10 bg-white dark:bg-darkTheme shadow-neo-lg dark:shadow-neo-white-lg">
+                <input type="hidden" name="subject" value="Denis Ezekiel - New Portfolio Contact Message" />
 
-            <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                    <div>
+                        <label className="block text-xs font-Outfit font-bold uppercase tracking-wider mb-2 text-black dark:text-white">
+                            Your Name
+                        </label>
+                        <input
+                            type="text"
+                            placeholder="John Doe"
+                            className="w-full px-4 py-3 outline-none border-2 border-black dark:border-white rounded-xl bg-gray-50 dark:bg-darkHover/40 text-black dark:text-white font-Outfit placeholder-gray-400 focus:bg-white focus:shadow-neo-sm dark:focus:shadow-neo-white-sm transition-all"
+                            required
+                            name="name"
+                        />
+                    </div>
 
-                <input type="hidden" name="subject" value="Eliana Jade - New form Submission" />
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 mb-8">
-                    <input type="text" placeholder="Enter your name" className="w-full px-4 py-2.5 focus:ring-1 outline-none border border-gray-300 dark:border-white/30 rounded-md bg-white dark:bg-darkHover/30" required name="name" />
-
-                    <input type="email" placeholder="Enter your email" className="w-full px-4 py-2.5 focus:ring-1 outline-none border border-gray-300 dark:border-white/30 rounded-md bg-white dark:bg-darkHover/30" required name="email" />
+                    <div>
+                        <label className="block text-xs font-Outfit font-bold uppercase tracking-wider mb-2 text-black dark:text-white">
+                            Your Email
+                        </label>
+                        <input
+                            type="email"
+                            placeholder="john@example.com"
+                            className="w-full px-4 py-3 outline-none border-2 border-black dark:border-white rounded-xl bg-gray-50 dark:bg-darkHover/40 text-black dark:text-white font-Outfit placeholder-gray-400 focus:bg-white focus:shadow-neo-sm dark:focus:shadow-neo-white-sm transition-all"
+                            required
+                            name="email"
+                        />
+                    </div>
                 </div>
-                <textarea rows="6" placeholder="Enter your message" className="w-full px-4 py-2.5 focus:ring-1 outline-none border border-gray-300 dark:border-white/30 rounded-md bg-white mb-6 dark:bg-darkHover/30" required name="message"></textarea>
+
+                <div className="mb-6">
+                    <label className="block text-xs font-Outfit font-bold uppercase tracking-wider mb-2 text-black dark:text-white">
+                        Your Message
+                    </label>
+                    <textarea
+                        rows="5"
+                        placeholder="Tell me about your project or inquiry..."
+                        className="w-full px-4 py-3 outline-none border-2 border-black dark:border-white rounded-xl bg-gray-50 dark:bg-darkHover/40 text-black dark:text-white font-Outfit placeholder-gray-400 focus:bg-white focus:shadow-neo-sm dark:focus:shadow-neo-white-sm transition-all"
+                        required
+                        name="message"
+                    ></textarea>
+                </div>
+
                 <div className="h-captcha mb-6 max-w-full overflow-x-auto flex justify-center" data-captcha="true"></div>
-                <button type='submit' className="py-2.5 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border dark:border-white/30 dark:hover:bg-darkHover">
-                    Submit now
-                    <img src="/assets/right-arrow-white.png" alt="" className="w-4" />
+
+                <button
+                    type="submit"
+                    className="py-3.5 px-10 w-full sm:w-max flex items-center justify-center gap-2 bg-black dark:bg-white text-white dark:text-black rounded-full border-2 border-black dark:border-white font-Outfit font-bold text-base shadow-neo dark:shadow-neo-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-sm dark:hover:shadow-neo-white-sm active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all mx-auto cursor-pointer"
+                >
+                    Send message
+                    <img src="/assets/right-arrow-white.png" alt="" className="w-4 dark:invert" />
                 </button>
-                <p className='mt-4 text-center'>{result}</p>
+
+                {result && (
+                    <p className="mt-4 text-center font-Outfit font-semibold text-sm text-black dark:text-white">
+                        {result}
+                    </p>
+                )}
             </form>
-        </div>
-    )
+        </section>
+    );
 }

@@ -28,6 +28,12 @@ module.exports = {
             boxShadow: {
                 'black': '4px 4px 0 #000',
                 'white': '4px 4px 0 #fff',
+                'neo-sm': '2px 2px 0 #000',
+                'neo': '4px 4px 0 #000',
+                'neo-lg': '6px 6px 0 #000',
+                'neo-white-sm': '2px 2px 0 #fff',
+                'neo-white': '4px 4px 0 #fff',
+                'neo-white-lg': '6px 6px 0 #fff',
             }
         },
     },

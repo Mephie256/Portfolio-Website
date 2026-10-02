@@ -1,44 +1,55 @@
 export default function Footer() {
   return (
-    <div className="mt-20">
+    <footer className="mt-20 pb-12">
       <div className="text-center">
-        <a href="https://prebuiltui.com?utm_source=eliana">
+        <a href="/" className="inline-block">
           <img
             src="/assets/logo.png"
-            alt=""
-            className="w-36 mx-auto mb-2 dark:hidden"
+            alt="Denis Ezekiel"
+            className="w-36 mx-auto mb-3 dark:hidden"
           />
           <img
             src="/assets/logo_dark.png"
-            alt=""
-            className="w-36 mx-auto mb-2 hidden dark:block"
+            alt="Denis Ezekiel"
+            className="w-36 mx-auto mb-3 hidden dark:block"
           />
         </a>
 
-        <div className="w-max flex items-center gap-2 mx-auto">
-          <img src="/assets/mail_icon.png" alt="" className="w-5 dark:hidden" />
-          <img
-            src="/assets/mail_icon_dark.png"
-            alt=""
-            className="w-5 hidden dark:block"
-          />
-
-          <a href="mailto:dm8143092@gmail.com">dm8143092@gmail.com</a>
+        <div className="w-max mx-auto mt-2">
+          <a
+            href="mailto:dm8143092@gmail.com"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-black dark:border-white bg-white dark:bg-darkTheme shadow-neo-sm dark:shadow-neo-white-sm font-Outfit font-semibold text-sm hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all text-black dark:text-white"
+          >
+            <img src="/assets/mail_icon.png" alt="" className="w-4 dark:hidden" />
+            <img
+              src="/assets/mail_icon_dark.png"
+              alt=""
+              className="w-4 hidden dark:block"
+            />
+            dm8143092@gmail.com
+          </a>
         </div>
       </div>
-      <div className="text-center sm:flex items-center justify-between border-t border-gray-400 mx-4 sm:mx-8 lg:mx-[10%] mt-12 py-3">
-        <p>© {new Date().getFullYear()} Denis Ezekiel. All rights reserved.</p>
-        <ul className="flex items-center gap-6 justify-center mt-4 sm:mt-0">
+
+      <div className="text-center sm:flex items-center justify-between border-t-2 border-black dark:border-white/40 mx-4 sm:mx-8 lg:mx-[10%] mt-12 pt-6">
+        <p className="font-Outfit font-medium text-sm text-gray-700 dark:text-gray-300">
+          © {new Date().getFullYear()} Denis Ezekiel. All rights reserved.
+        </p>
+
+        <ul className="flex items-center gap-3 justify-center mt-5 sm:mt-0">
+          {/* GitHub */}
           <li>
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://github.com/Mephie256"
-              className="text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white transition"
+              aria-label="GitHub"
+              className="w-10 h-10 rounded-full border-2 border-black dark:border-white bg-white dark:bg-darkTheme shadow-neo-sm dark:shadow-neo-white-sm flex items-center justify-center hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all text-black dark:text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -46,16 +57,20 @@ export default function Footer() {
               </svg>
             </a>
           </li>
+
+          {/* Facebook */}
           <li>
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.facebook.com/denisezel17"
-              className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition"
+              aria-label="Facebook"
+              className="w-10 h-10 rounded-full border-2 border-black dark:border-white bg-white dark:bg-darkTheme shadow-neo-sm dark:shadow-neo-white-sm flex items-center justify-center hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all text-[#1877F2]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -63,16 +78,20 @@ export default function Footer() {
               </svg>
             </a>
           </li>
+
+          {/* Instagram */}
           <li>
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.instagram.com/dm8143092/"
-              className="text-gray-600 hover:text-pink-600 dark:text-gray-300 dark:hover:text-pink-400 transition"
+              aria-label="Instagram"
+              className="w-10 h-10 rounded-full border-2 border-black dark:border-white bg-white dark:bg-darkTheme shadow-neo-sm dark:shadow-neo-white-sm flex items-center justify-center hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all text-[#E4405F]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -86,16 +105,20 @@ export default function Footer() {
               </svg>
             </a>
           </li>
+
+          {/* TikTok */}
           <li>
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.tiktok.com/@incredboify"
-              className="text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white transition"
+              aria-label="TikTok"
+              className="w-10 h-10 rounded-full border-2 border-black dark:border-white bg-white dark:bg-darkTheme shadow-neo-sm dark:shadow-neo-white-sm flex items-center justify-center hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all text-black dark:text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -105,6 +128,6 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-    </div>
+    </footer>
   );
 }
