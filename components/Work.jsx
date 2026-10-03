@@ -34,7 +34,7 @@ export default function Work() {
 
   return (
     <section id="work" className="w-full px-4 sm:px-8 lg:px-[12%] py-16 scroll-mt-24">
-      <div className="text-center mb-10">
+      <div data-heading className="text-center mb-10">
         <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
           My portfolio
         </h4>
@@ -75,7 +75,7 @@ export default function Work() {
         ))}
       </div>
 
-      <div className="text-center my-12">
+      <div data-reveal className="text-center my-12">
         <a
           href="/work"
           className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-black dark:border-white px-8 py-3 bg-white dark:bg-darkHover text-black dark:text-white font-Outfit font-bold text-base shadow-neo dark:shadow-neo-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-sm dark:hover:shadow-neo-white-sm active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all duration-150"

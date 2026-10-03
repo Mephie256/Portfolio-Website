@@ -9,7 +9,7 @@ gsap.registerPlugin(SplitText);
 // rises line by line out of a mask, followed by the paragraph and buttons.
 // The navbar drop-in is opt-in (home page only).
 // The overlay only hides the hero for the split second it takes to get ready.
-// Dispatches "intro:reveal" so the photo pop-ins (ImagePop) start as the text lands.
+// Dispatches "intro:reveal" so the page animations (PageAnimations) start as the text lands.
 export default function IntroLoader({ navbar = false }) {
     const overlayRef = useRef(null);
 

@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Images that pop in via components/ImagePop.jsx start hidden (only when JS runs) */
+/* Elements animated by components/PageAnimations.jsx start hidden (only when JS runs) */
 @media (scripting: enabled) {
-    [data-pop] {
+    [data-pop],
+    [data-card],
+    [data-reveal],
+    [data-heading] > h4,
+    [data-heading] > h2,
+    [data-heading] > p {
         opacity: 0;
     }
 }

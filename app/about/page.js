@@ -2,7 +2,7 @@
 import React from "react";
 import LenisScroll from "@/components/LenisScroll";
 import IntroLoader from "@/components/IntroLoader";
-import ImagePop from "@/components/ImagePop";
+import PageAnimations from "@/components/PageAnimations";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import localFont from "next/font/local";
@@ -63,7 +63,7 @@ export default function AboutPage() {
         <>
             <LenisScroll />
             <IntroLoader />
-            <ImagePop />
+            <PageAnimations />
             <Navbar />
 
             <main className="pt-28 min-h-screen dark:bg-darkTheme dark:text-white pb-20">
@@ -105,7 +105,7 @@ export default function AboutPage() {
 
                         <div className="flex-1">
                             <div className="mb-14">
-                                <h2 className="text-2xl font-Outfit font-bold mb-4 text-black dark:text-white">
+                                <h2 data-reveal className="text-2xl font-Outfit font-bold mb-4 text-black dark:text-white">
                                     My Story
                                 </h2>
                                 <p className="mb-5 max-w-2xl font-Ovo text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
@@ -116,13 +116,14 @@ export default function AboutPage() {
                                 </p>
                             </div>
 
-                            <h2 className="text-2xl font-Outfit font-bold mb-6 text-black dark:text-white">
+                            <h2 data-reveal className="text-2xl font-Outfit font-bold mb-6 text-black dark:text-white">
                                 Professional Expertise
                             </h2>
                             <ul className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-2xl mb-16">
                                 {data.map((item) => (
                                     <li
                                         key={item.name}
+                                        data-card
                                         className="border-2 border-black dark:border-white rounded-2xl p-5 bg-white dark:bg-darkTheme shadow-neo dark:shadow-neo-white cursor-pointer hover:-translate-y-1.5 hover:shadow-neo-lg dark:hover:shadow-neo-white-lg transition-all duration-200"
                                     >
                                         <img src={item.icon1} alt="" className="w-7 mt-1 dark:hidden" />
@@ -141,12 +142,12 @@ export default function AboutPage() {
                                 ))}
                             </ul>
 
-                            <h2 className="text-2xl font-Outfit font-bold mb-8 text-black dark:text-white">
+                            <h2 data-reveal className="text-2xl font-Outfit font-bold mb-8 text-black dark:text-white">
                                 My Journey
                             </h2>
                             <div className="flex flex-col gap-6 mb-16 max-w-2xl border-l-2 border-green-500 dark:border-green-400 pl-6 ml-3">
                                 {journey.map((exp, idx) => (
-                                    <div key={idx} className="relative">
+                                    <div key={idx} data-card className="relative">
                                         <span className="w-3.5 h-3.5 bg-green-500 border-2 border-black dark:border-white rounded-full absolute -left-[31px] top-1.5"></span>
                                         <div>
                                             <span className="text-xs font-Outfit font-bold text-green-900 dark:text-green-300 mb-2 inline-block px-3 py-1 bg-green-100 dark:bg-green-950/50 border-2 border-black dark:border-white rounded-full shadow-neo-sm dark:shadow-neo-white-sm">
@@ -163,13 +164,14 @@ export default function AboutPage() {
                                 ))}
                             </div>
 
-                            <h2 className="text-2xl font-Outfit font-bold mb-6 text-black dark:text-white">
+                            <h2 data-reveal className="text-2xl font-Outfit font-bold mb-6 text-black dark:text-white">
                                 Tech Stack & Tools
                             </h2>
                             <ul className="flex flex-wrap items-center gap-4 sm:gap-6 mb-16">
                                 {tools.map((tool) => (
                                     <li
                                         key={tool.name}
+                                        data-card
                                         className="flex flex-col items-center gap-2 group cursor-pointer"
                                     >
                                         <div className="flex items-center justify-center w-14 sm:w-16 aspect-square border-2 border-black dark:border-white bg-white dark:bg-darkHover rounded-2xl shadow-neo-sm dark:shadow-neo-white-sm group-hover:-translate-y-1.5 group-hover:shadow-neo dark:group-hover:shadow-neo-white transition-all duration-200">
@@ -183,7 +185,7 @@ export default function AboutPage() {
                             </ul>
 
                             <div className="pt-10 border-t-2 border-black dark:border-white/40">
-                                <h2 className="text-2xl font-Outfit font-bold mb-4 text-black dark:text-white">
+                                <h2 data-reveal className="text-2xl font-Outfit font-bold mb-4 text-black dark:text-white">
                                     What&apos;s Next?
                                 </h2>
                                 <p className="max-w-2xl font-Ovo text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-8">

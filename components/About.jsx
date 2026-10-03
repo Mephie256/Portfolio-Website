@@ -45,7 +45,7 @@ export default function About() {
         />
       </div>
 
-      <div className="relative z-10 text-center mb-10">
+      <div data-heading className="relative z-10 text-center mb-10">
         <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
           Introduction
         </h4>
@@ -90,6 +90,7 @@ export default function About() {
             {data.map((item) => (
               <li
                 key={item.name}
+                data-card
                 className="border-2 border-black dark:border-white rounded-2xl p-5 bg-white dark:bg-darkTheme shadow-neo dark:shadow-neo-white cursor-pointer hover:-translate-y-1.5 hover:shadow-neo-lg dark:hover:shadow-neo-white-lg transition-all duration-200"
               >
                 <img src={item.icon1} alt="" className="w-7 mt-1 dark:hidden" />
@@ -117,6 +118,7 @@ export default function About() {
             {tools.map((tool) => (
               <li
                 key={tool.name}
+                data-card
                 className="flex items-center justify-center w-12 sm:w-14 aspect-square border-2 border-black dark:border-white rounded-xl bg-white dark:bg-darkHover shadow-neo-sm dark:shadow-neo-white-sm cursor-pointer hover:-translate-y-1 hover:shadow-neo dark:hover:shadow-neo-white transition-all duration-200"
                 title={tool.name}
               >

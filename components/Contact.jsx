@@ -83,7 +83,7 @@ export default function Contact() {
 
     return (
         <section id="contact" className="w-full px-4 sm:px-8 lg:px-[12%] py-20 scroll-mt-24">
-            <div className="text-center mb-10">
+            <div data-heading className="text-center mb-10">
                 <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
                     Connect with me
                 </h4>
@@ -95,7 +95,7 @@ export default function Contact() {
                 </p>
             </div>
 
-            <form onSubmit={onSubmit} className="max-w-2xl mx-auto border-2 border-black dark:border-white rounded-3xl p-6 sm:p-10 bg-white dark:bg-darkTheme shadow-neo-lg dark:shadow-neo-white-lg">
+            <form onSubmit={onSubmit} data-card className="max-w-2xl mx-auto border-2 border-black dark:border-white rounded-3xl p-6 sm:p-10 bg-white dark:bg-darkTheme shadow-neo-lg dark:shadow-neo-white-lg">
                 <input type="hidden" name="subject" value="Denis Ezekiel - New Portfolio Contact Message" />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">

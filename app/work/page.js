@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import LenisScroll from "@/components/LenisScroll";
 import IntroLoader from "@/components/IntroLoader";
-import ImagePop from "@/components/ImagePop";
+import PageAnimations from "@/components/PageAnimations";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import localFont from "next/font/local";
@@ -82,7 +82,7 @@ export default function WorkPage() {
         <>
             <LenisScroll />
             <IntroLoader />
-            <ImagePop />
+            <PageAnimations />
             <Navbar />
 
             <main className="pt-28 pb-24 min-h-screen dark:bg-darkTheme dark:text-white">

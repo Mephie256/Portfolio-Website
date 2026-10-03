@@ -74,7 +74,7 @@ const Testimonials = () => {
                 `}
             </style>
             <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-14">
+                <div data-heading className="text-center mb-14">
                     <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
                         Testimonials
                     </h4>
@@ -88,7 +88,7 @@ const Testimonials = () => {
 
                 <div className="space-y-8 overflow-hidden py-6">
                     {rows.map((row, rowIndex) => (
-                        <div key={rowIndex} className="relative w-full overflow-hidden">
+                        <div key={rowIndex} data-card className="relative w-full overflow-hidden">
                             {/* Seamless fade masks so cards are never cropped at the edges */}
                             <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-r from-white dark:from-[#11001F] to-transparent z-20 pointer-events-none"></div>
                             <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-36 bg-gradient-to-l from-white dark:from-[#11001F] to-transparent z-20 pointer-events-none"></div>

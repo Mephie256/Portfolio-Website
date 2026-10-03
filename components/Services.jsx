@@ -34,7 +34,7 @@ export default function Services() {
 
   return (
     <section id="services" className="w-full px-4 sm:px-8 lg:px-[12%] py-16 scroll-mt-24">
-      <div className="text-center mb-10">
+      <div data-heading className="text-center mb-10">
         <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
           What I offer
         </h4>
@@ -50,6 +50,7 @@ export default function Services() {
         {services.map((service) => (
           <div
             key={service.name}
+            data-card
             className="border-2 border-black dark:border-white rounded-2xl p-7 bg-white dark:bg-darkTheme shadow-neo dark:shadow-neo-white hover:-translate-y-2 hover:shadow-neo-lg dark:hover:shadow-neo-white-lg transition-all duration-200 flex flex-col justify-between group"
           >
             <div>

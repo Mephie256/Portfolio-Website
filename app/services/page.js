@@ -2,6 +2,7 @@
 import React from "react";
 import LenisScroll from "@/components/LenisScroll";
 import IntroLoader from "@/components/IntroLoader";
+import PageAnimations from "@/components/PageAnimations";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import localFont from "next/font/local";
@@ -88,6 +89,7 @@ export default function ServicesPage() {
         <>
             <LenisScroll />
             <IntroLoader />
+            <PageAnimations />
             <Navbar />
 
             <main className="pt-28 pb-24 min-h-screen dark:bg-darkTheme dark:text-white">
@@ -111,6 +113,7 @@ export default function ServicesPage() {
                             <a
                                 href={service.link}
                                 key={service.name}
+                                data-card
                                 className="border-2 border-black dark:border-white rounded-2xl p-7 bg-white dark:bg-darkTheme shadow-neo dark:shadow-neo-white hover:-translate-y-2 hover:shadow-neo-lg dark:hover:shadow-neo-white-lg transition-all duration-200 flex flex-col justify-between group"
                             >
                                 <div>
@@ -136,7 +139,7 @@ export default function ServicesPage() {
 
                     {/* Detailed Services Breakdown */}
                     <div className="space-y-20">
-                        <div className="text-center mb-12">
+                        <div data-heading className="text-center mb-12">
                             <h2 className={`text-3xl sm:text-4xl font-bold tracking-tight text-black dark:text-white mb-3 ${orivian.className}`}>
                                 In-Depth Expertise
                             </h2>
@@ -146,7 +149,7 @@ export default function ServicesPage() {
                         </div>
 
                         {detailedServices.map((detail, index) => (
-                            <div key={detail.id} id={detail.id} className={`flex flex-col md:flex-row gap-10 items-center ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''} scroll-mt-36`}>
+                            <div key={detail.id} id={detail.id} data-card className={`flex flex-col md:flex-row gap-10 items-center ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''} scroll-mt-36`}>
                                 <div className="w-full md:w-1/2 bg-white dark:bg-darkTheme rounded-3xl p-8 sm:p-12 border-2 border-black dark:border-white shadow-neo-lg dark:shadow-neo-white-lg relative overflow-hidden">
                                     <h3 className="text-2xl sm:text-3xl font-Outfit font-bold text-black dark:text-white mb-4">{detail.title}</h3>
                                     <p className="font-Ovo text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">{detail.description}</p>
@@ -173,7 +176,7 @@ export default function ServicesPage() {
 
                     {/* Process */}
                     <div className="mb-10">
-                        <div className="text-center mb-14">
+                        <div data-heading className="text-center mb-14">
                             <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
                                 How I Work
                             </h4>
@@ -183,7 +186,7 @@ export default function ServicesPage() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             {process.map((step, idx) => (
-                                <div key={idx} className="bg-white dark:bg-darkTheme border-2 border-black dark:border-white rounded-2xl p-7 shadow-neo dark:shadow-neo-white hover:-translate-y-2 hover:shadow-neo-lg dark:hover:shadow-neo-white-lg transition-all duration-200 relative">
+                                <div key={idx} data-card className="bg-white dark:bg-darkTheme border-2 border-black dark:border-white rounded-2xl p-7 shadow-neo dark:shadow-neo-white hover:-translate-y-2 hover:shadow-neo-lg dark:hover:shadow-neo-white-lg transition-all duration-200 relative">
                                     <div className="w-10 h-10 rounded-full border-2 border-black dark:border-white bg-green-500 text-black font-Outfit font-bold flex items-center justify-center shadow-neo-sm mb-4">
                                         0{idx + 1}
                                     </div>
@@ -195,7 +198,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* CTA Box */}
-                    <div className="mt-24 text-center bg-white dark:bg-darkTheme rounded-3xl p-10 lg:p-14 border-2 border-black dark:border-white shadow-neo-lg dark:shadow-neo-white-lg relative overflow-hidden">
+                    <div data-card className="mt-24 text-center bg-white dark:bg-darkTheme rounded-3xl p-10 lg:p-14 border-2 border-black dark:border-white shadow-neo-lg dark:shadow-neo-white-lg relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-green-500 rounded-bl-full border-b-2 border-l-2 border-black dark:border-white pointer-events-none opacity-30"></div>
                         <h2 className={`text-3xl sm:text-5xl font-bold text-black dark:text-white mb-5 ${orivian.className}`}>
                             Ready to start your next project?
