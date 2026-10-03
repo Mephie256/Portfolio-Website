@@ -35,8 +35,17 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="w-full px-4 sm:px-8 lg:px-[12%] py-16 scroll-mt-24">
-      <div className="text-center mb-10">
+    <section id="about" className="relative w-full px-4 sm:px-8 lg:px-[12%] py-16 scroll-mt-24 overflow-hidden">
+      {/* Poly Line Graphic from Design */}
+      <div className="absolute -right-20 sm:-right-28 md:-right-36 lg:-right-44 xl:-right-48 top-[76%] lg:top-[55%] -translate-y-1/2 pointer-events-none select-none z-0">
+        <img
+          src="/assets/poly-line.png"
+          alt=""
+          className="w-56 sm:w-72 md:w-96 lg:w-[440px] xl:w-[480px] h-auto object-contain animate-[spin_35s_linear_infinite]"
+        />
+      </div>
+
+      <div className="relative z-10 text-center mb-10">
         <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
           Introduction
         </h4>
@@ -45,7 +54,7 @@ export default function About() {
         </h2>
       </div>
 
-      <div className="flex w-full flex-col lg:flex-row items-center gap-14 lg:gap-20 my-8 lg:my-14">
+      <div className="relative z-10 flex w-full flex-col lg:flex-row items-center gap-14 lg:gap-20 my-8 lg:my-14">
         {/* Photo Container with Neobrutalist Offset Card Backing in Green (exact match to user mockup) */}
         <div className="relative max-w-max mx-auto px-4 sm:px-0 mb-6 lg:mb-0">
           <div className="absolute inset-0 translate-x-3.5 translate-y-3.5 sm:translate-x-4 sm:translate-y-4 bg-[#22c55e] rounded-3xl border-[2.5px] border-black dark:border-white"></div>

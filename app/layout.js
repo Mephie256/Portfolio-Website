@@ -169,7 +169,7 @@ export default function RootLayout({ children }) {
     };
 
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <head>
                 <meta property="og:title" content="Denis Ezekiel | Fullstack Developer" />
                 <meta property="og:description" content="Denis Ezekiel is a Fullstack Developer based in Kampala, Uganda — building web & mobile apps. Video editing as a creative addon." />
@@ -197,6 +197,11 @@ export default function RootLayout({ children }) {
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify(websiteJsonLd),
+                    }}
+                />
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `try{if(localStorage.theme==="dark")document.documentElement.classList.add("dark")}catch(e){}`,
                     }}
                 />
             </head>

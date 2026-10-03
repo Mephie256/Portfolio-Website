@@ -65,7 +65,7 @@ export default function Services() {
             </div>
             <a
               href={service.link}
-              className="flex items-center gap-2 text-sm font-Outfit font-bold text-black dark:text-white mt-6 group-hover:translate-x-1.5 transition-transform"
+              className="flex items-center gap-2 text-sm font-Outfit font-bold text-black dark:text-white py-3 mt-3 -mb-3 group-hover:translate-x-1.5 transition-transform"
             >
               Read more
               <img src="/assets/right-arrow.png" alt="" className="w-4 dark:invert" />

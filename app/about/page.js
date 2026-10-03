@@ -84,7 +84,7 @@ export default function AboutPage() {
                             />
 
                             {/* Circular Badge: FRONT-END WEB DEVELOPER with 😎 (as shown in second image) */}
-                            <div className="z-20 bg-white dark:bg-darkTheme border-[2.5px] border-black dark:border-white shadow-[3px_3px_0px_#000] dark:shadow-[3px_3px_0px_#fff] w-28 sm:w-36 aspect-square absolute -right-3 sm:-right-5 -bottom-3 sm:-bottom-5 rounded-full flex items-center justify-center p-1">
+                            <div className="z-20 bg-white dark:bg-darkTheme border-[2.5px] border-black dark:border-white shadow-[3px_3px_0px_#000] dark:shadow-[3px_3px_0px_#fff] w-28 sm:w-36 aspect-square absolute -right-1 sm:-right-5 -bottom-3 sm:-bottom-5 rounded-full flex items-center justify-center p-1">
                                 <svg viewBox="0 0 100 100" className="w-full h-full animate-spin_slow">
                                     <path id="aboutPageCirclePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
                                     <text className="text-[8.5px] uppercase font-Outfit font-bold tracking-[1.8px] fill-black dark:fill-white">
