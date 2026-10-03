@@ -34,6 +34,12 @@ export default function Footer() {
       <div className="text-center sm:flex items-center justify-between border-t-2 border-black dark:border-white/40 mx-4 sm:mx-8 lg:mx-[10%] mt-12 pt-6">
         <p className="font-Outfit font-medium text-sm text-gray-700 dark:text-gray-300">
           © {new Date().getFullYear()} Denis Ezekiel. All rights reserved.
+          <span className="block text-xs text-gray-500 dark:text-gray-400 mt-1">
+            UI sounds by{" "}
+            <a href="https://snd.dev" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-green-600 dark:hover:text-green-400">
+              SND
+            </a>
+          </span>
         </p>
 
         <ul className="flex items-center gap-3 justify-center mt-5 sm:mt-0">

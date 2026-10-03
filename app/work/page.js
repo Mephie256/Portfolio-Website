@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import LenisScroll from "@/components/LenisScroll";
 import IntroLoader from "@/components/IntroLoader";
+import SoundEffects from "@/components/SoundEffects";
 import PageAnimations from "@/components/PageAnimations";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -81,6 +82,7 @@ export default function WorkPage() {
     return (
         <>
             <LenisScroll />
+            <SoundEffects />
             <IntroLoader />
             <PageAnimations />
             <Navbar />

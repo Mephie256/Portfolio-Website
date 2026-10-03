@@ -1,5 +1,6 @@
 import LenisScroll from "@/components/LenisScroll";
 import IntroLoader from "@/components/IntroLoader";
+import SoundEffects from "@/components/SoundEffects";
 import PageAnimations from "@/components/PageAnimations";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
@@ -14,6 +15,7 @@ export default function Page() {
     return (
         <>
             <LenisScroll />
+            <SoundEffects />
             <IntroLoader navbar />
             <PageAnimations />
             <Navbar />

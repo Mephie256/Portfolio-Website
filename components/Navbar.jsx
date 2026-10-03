@@ -1,15 +1,22 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { play, isEnabled, setEnabled, subscribe } from "@/lib/sound";
 
 export default function Navbar() {
   const sideMenuRef = useRef();
+  const menuOpen = useRef(false);
+  const [soundOn, setSoundOn] = useState(true);
 
   const openMenu = () => {
+    menuOpen.current = true;
+    play("transition_up");
     if (sideMenuRef.current) {
       sideMenuRef.current.style.transform = "translateX(-18rem)";
     }
   };
   const closeMenu = () => {
+    if (menuOpen.current) play("transition_down");
+    menuOpen.current = false;
     if (sideMenuRef.current) {
       sideMenuRef.current.style.transform = "translateX(18rem)";
     }
@@ -17,11 +24,18 @@ export default function Navbar() {
   const toggleTheme = () => {
     document.documentElement.classList.toggle("dark");
 
+    const dark = document.documentElement.classList.contains("dark");
+    play(dark ? "toggle_on" : "toggle_off");
     try {
-      localStorage.theme = document.documentElement.classList.contains("dark")
-        ? "dark"
-        : "light";
+      localStorage.theme = dark ? "dark" : "light";
     } catch {}
+  };
+
+  const toggleSound = () => {
+    const next = !isEnabled();
+    setEnabled(next);
+    // confirm "on" with a sound; "off" is silent by definition
+    if (next) play("toggle_on");
   };
 
   useEffect(() => {
@@ -31,6 +45,12 @@ export default function Navbar() {
       saved = localStorage.theme;
     } catch {}
     document.documentElement.classList.toggle("dark", saved === "dark");
+  }, []);
+
+  // keep the sound switch in sync with the saved preference
+  useEffect(() => {
+    setSoundOn(isEnabled());
+    return subscribe(setSoundOn);
   }, []);
 
   return (
@@ -97,6 +117,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={toggleTheme}
+              data-snd="none"
               aria-label="Toggle dark/light mode"
               className="w-11 h-11 sm:w-9 sm:h-9 rounded-full border-2 border-black dark:border-white flex items-center justify-center bg-white dark:bg-darkHover shadow-neo-sm dark:shadow-neo-white-sm hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all cursor-pointer"
             >
@@ -112,11 +133,37 @@ export default function Navbar() {
               />
             </button>
 
+            {/* Sound on/off (UI sounds are on by default) */}
+            <button
+              onClick={toggleSound}
+              data-snd="none"
+              aria-label={soundOn ? "Turn sound off" : "Turn sound on"}
+              aria-pressed={soundOn}
+              title={soundOn ? "Sound on" : "Sound off"}
+              className="w-11 h-11 sm:w-9 sm:h-9 rounded-full border-2 border-black dark:border-white flex items-center justify-center bg-white dark:bg-darkHover text-black dark:text-white shadow-neo-sm dark:shadow-neo-white-sm hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all cursor-pointer"
+            >
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M11 5 6 9H3v6h3l5 4V5z" fill="currentColor" />
+                {soundOn ? (
+                  <>
+                    <path d="M15.5 8.5a5 5 0 0 1 0 7" />
+                    <path d="M18.5 5.5a9 9 0 0 1 0 13" />
+                  </>
+                ) : (
+                  <>
+                    <path d="m16 9 5 6" />
+                    <path d="m21 9-5 6" />
+                  </>
+                )}
+              </svg>
+            </button>
+
             {/* Brand Green Contact Pill Button */}
             <a
               href="https://wa.me/256763731276"
               target="_blank"
               rel="noopener noreferrer"
+              data-snd="button"
               className="hidden sm:inline-flex items-center gap-1.5 px-5 py-1.5 rounded-full border-2 border-black bg-green-500 hover:bg-green-400 text-black font-bold text-sm shadow-neo-sm hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all"
             >
               Contact
@@ -126,6 +173,7 @@ export default function Navbar() {
             <button
               className="md:hidden w-11 h-11 sm:w-9 sm:h-9 rounded-full border-2 border-black dark:border-white flex items-center justify-center bg-white dark:bg-darkHover shadow-neo-sm dark:shadow-neo-white-sm cursor-pointer"
               onClick={openMenu}
+              data-snd="none"
               aria-label="Open navigation menu"
             >
               <img
@@ -151,6 +199,7 @@ export default function Navbar() {
         <div
           className="absolute right-6 top-6 w-9 h-9 rounded-full border-2 border-black dark:border-white flex items-center justify-center bg-gray-100 dark:bg-darkHover shadow-neo-sm dark:shadow-neo-white-sm cursor-pointer"
           onClick={closeMenu}
+          data-snd="none"
         >
           <img
             src="/assets/close-black.png"
@@ -168,6 +217,7 @@ export default function Navbar() {
           <a
             href="/"
             onClick={closeMenu}
+            data-snd="none"
             className="text-lg hover:text-green-500 transition"
           >
             Home
@@ -177,6 +227,7 @@ export default function Navbar() {
           <a
             href="/about"
             onClick={closeMenu}
+            data-snd="none"
             className="text-lg hover:text-green-500 transition"
           >
             About me
@@ -186,6 +237,7 @@ export default function Navbar() {
           <a
             href="/services"
             onClick={closeMenu}
+            data-snd="none"
             className="text-lg hover:text-green-500 transition"
           >
             Services
@@ -195,6 +247,7 @@ export default function Navbar() {
           <a
             href="/work"
             onClick={closeMenu}
+            data-snd="none"
             className="text-lg hover:text-green-500 transition"
           >
             Projects
@@ -206,6 +259,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={closeMenu}
+            data-snd="none"
             className="inline-flex items-center justify-center w-full px-5 py-2.5 rounded-full border-2 border-black bg-green-500 hover:bg-green-400 text-black font-bold shadow-neo-sm"
           >
             Contact me

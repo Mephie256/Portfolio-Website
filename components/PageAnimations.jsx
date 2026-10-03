@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { play } from "@/lib/sound";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,17 +50,19 @@ export default function PageAnimations() {
 
         // Fully reversible: scrolling down past the trigger line plays the entrance,
         // scrolling back up past it animates the elements back to their hidden state.
-        const enter = (items, from, to) =>
+        const enter = (items, from, to, sound) =>
             ScrollTrigger.batch(items, {
                 start: "top 90%",
-                onEnter: (batch) =>
-                    gsap.fromTo(batch, from, {
+                onEnter: (batch) => {
+                    if (sound) play(sound, { volume: 0.3, throttle: 700 });
+                    return gsap.fromTo(batch, from, {
                         ...to,
                         stagger: { amount: spread(batch.length, 0.12, 0.5) },
                         overwrite: true,
                         onStart: hold,
                         onComplete: release,
-                    }),
+                    });
+                },
                 onLeaveBack: (batch) =>
                     gsap.to(batch, {
                         ...from,
@@ -83,7 +86,8 @@ export default function PageAnimations() {
             enter(
                 cards,
                 { opacity: 0, y: 80, scale: 0.9, rotation: (i) => (i % 2 ? 2.5 : -2.5) },
-                { opacity: 1, y: 0, scale: 1, rotation: 0, duration: 1, ease: "back.out(1.35)" }
+                { opacity: 1, y: 0, scale: 1, rotation: 0, duration: 1, ease: "back.out(1.35)" },
+                "swipe"
             );
 
             // loose blocks: fade up

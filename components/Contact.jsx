@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import localFont from "next/font/local";
+import { play } from "@/lib/sound";
 
 const orivian = localFont({
     src: "../public/fonts/rocline/orivian/OrivianDemo-Regular.otf",
@@ -13,6 +14,7 @@ export default function Contact() {
         const hCaptcha = event.target.querySelector('textarea[name=h-captcha-response]')?.value;
         if (!hCaptcha) {
             setResult("Please fill out captcha field");
+            play("caution");
             return;
         }
         setResult("Sending....");
@@ -30,12 +32,15 @@ export default function Contact() {
                 console.log("Success", res);
                 setResult(res.message);
                 event.target.reset();
+                play("celebration");
             } else {
                 console.log("Error", res);
                 setResult(res.message);
+                play("caution");
             }
         } catch (err) {
             setResult("Something went wrong. Please reach out via WhatsApp or email.");
+            play("caution");
         }
     };
 
@@ -143,6 +148,7 @@ export default function Contact() {
 
                 <button
                     type="submit"
+                    data-snd="button"
                     className="py-3.5 px-10 w-full sm:w-max flex items-center justify-center gap-2 bg-black dark:bg-white text-white dark:text-black rounded-full border-2 border-black dark:border-white font-Outfit font-bold text-base shadow-neo dark:shadow-neo-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-neo-sm dark:hover:shadow-neo-white-sm active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all mx-auto cursor-pointer"
                 >
                     Send message

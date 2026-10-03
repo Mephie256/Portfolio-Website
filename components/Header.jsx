@@ -69,6 +69,7 @@ export default function Header() {
             {/* Button 1: My Work (Vibrant Green #22c55e) */}
             <a
               href="#work"
+              data-snd="button"
               className="inline-flex items-center gap-2 px-5 sm:px-8 py-3 sm:py-4 rounded-full border-[2px] sm:border-[2.5px] border-black bg-[#22c55e] hover:bg-[#16a34a] text-black font-Outfit font-bold text-sm sm:text-lg shadow-[3px_3px_0px_#000] sm:shadow-[4px_4px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#000] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none transition-all duration-150"
             >
               My Work
@@ -91,6 +92,7 @@ export default function Header() {
             {/* Button 2: About Me (White) */}
             <a
               href="#about"
+              data-snd="button"
               className="inline-flex items-center justify-center px-5 sm:px-8 py-3 sm:py-4 rounded-full border-[2px] sm:border-[2.5px] border-black dark:border-white bg-white dark:bg-darkHover hover:bg-gray-100 dark:hover:bg-darkHover/80 text-black dark:text-white font-Outfit font-bold text-sm sm:text-lg shadow-[3px_3px_0px_#000] dark:shadow-[3px_3px_0px_#fff] sm:shadow-[4px_4px_0px_#000] sm:dark:shadow-[4px_4px_0px_#fff] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#000] dark:hover:shadow-[2px_2px_0px_#fff] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none transition-all duration-150"
             >
               About Me
@@ -99,6 +101,7 @@ export default function Header() {
             {/* Button 3: Resume (Vibrant Lime #bef264) */}
             <a
               href="/resume/Mein-Resume.pdf"
+              data-snd="button"
               download
               className="inline-flex items-center gap-2 px-5 sm:px-8 py-3 sm:py-4 rounded-full border-[2px] sm:border-[2.5px] border-black bg-[#bef264] hover:bg-[#a3e635] text-black font-Outfit font-bold text-sm sm:text-lg shadow-[3px_3px_0px_#000] sm:shadow-[4px_4px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#000] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none transition-all duration-150"
             >
