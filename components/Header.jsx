@@ -24,7 +24,7 @@ export default function Header() {
         <div className="order-2 lg:order-1 lg:col-span-3 w-full flex flex-row lg:flex-col items-center justify-center lg:items-end gap-3.5 sm:gap-7 xl:gap-8 px-1 sm:px-0">
           
           {/* Top Photo: Sitting with laptop with Neobrutalism offset backing in Resume button lime (#bef264) */}
-          <div className="relative hover:scale-105 transition-transform duration-300">
+          <div data-pop className="relative hover:scale-105 transition-transform duration-300">
             {/* Neobrutalism offset backing in exact Resume button lime */}
             <div className="absolute inset-0 translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 bg-[#bef264] rounded-2xl sm:rounded-3xl border-[2px] sm:border-[2.5px] border-black dark:border-white"></div>
             
@@ -39,7 +39,7 @@ export default function Header() {
           </div>
 
           {/* Bottom Photo: Pointing on laptop with neobrutalist backing */}
-          <div className="relative rotate-1 hover:rotate-0 transition-transform duration-300">
+          <div data-pop className="relative rotate-1 hover:rotate-0 transition-transform duration-300">
             <div className="absolute inset-0 translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 bg-[#bef264] rounded-2xl sm:rounded-3xl border-[2px] sm:border-[2.5px] border-black dark:border-white"></div>
             <div className="relative z-10 w-[136px] min-[380px]:w-[152px] min-[440px]:w-44 sm:w-56 lg:w-64 xl:w-72 rounded-2xl sm:rounded-3xl overflow-hidden border-[2px] sm:border-[2.5px] border-black dark:border-white bg-white">
               <img
@@ -123,7 +123,7 @@ export default function Header() {
 
         {/* Right Column: Large Portrait Headshot Card with Green Neobrutalist Offset Bottom Layer */}
         <div className="order-3 lg:col-span-3 w-full flex items-center justify-center lg:justify-start px-2 sm:px-0">
-          <div className="relative hover:scale-[1.02] transition-transform duration-300">
+          <div data-pop className="relative hover:scale-[1.02] transition-transform duration-300">
             {/* Green offset block at the bottom-right */}
             <div className="absolute inset-0 translate-x-2.5 translate-y-2.5 sm:translate-x-3.5 sm:translate-y-3.5 bg-[#22c55e] rounded-[28px] sm:rounded-[34px] border-[2px] sm:border-[2.5px] border-black dark:border-white"></div>
             

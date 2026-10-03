@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import LenisScroll from "@/components/LenisScroll";
+import ImagePop from "@/components/ImagePop";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import localFont from "next/font/local";
@@ -60,6 +61,7 @@ export default function AboutPage() {
     return (
         <>
             <LenisScroll />
+            <ImagePop />
             <Navbar />
 
             <main className="pt-28 min-h-screen dark:bg-darkTheme dark:text-white pb-20">
@@ -75,7 +77,7 @@ export default function AboutPage() {
 
                     <div className="flex w-full flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-20 my-10 lg:my-16">
                         {/* Photo with Neobrutalist Offset Card Backing in Green (exact match to user mockup) */}
-                        <div className="max-w-max mx-auto relative lg:sticky lg:top-36 self-start pt-4 lg:pt-8 px-4 sm:px-0">
+                        <div data-pop className="max-w-max mx-auto relative lg:sticky lg:top-36 self-start pt-4 lg:pt-8 px-4 sm:px-0">
                             <div className="absolute inset-0 translate-x-3.5 translate-y-3.5 sm:translate-x-4 sm:translate-y-4 bg-[#22c55e] rounded-3xl border-[2.5px] border-black dark:border-white"></div>
                             <img
                                 src="/assets/user-image.png"

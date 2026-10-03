@@ -56,7 +56,7 @@ export default function About() {
 
       <div className="relative z-10 flex w-full flex-col lg:flex-row items-center gap-14 lg:gap-20 my-8 lg:my-14">
         {/* Photo Container with Neobrutalist Offset Card Backing in Green (exact match to user mockup) */}
-        <div className="relative max-w-max mx-auto px-4 sm:px-0 mb-6 lg:mb-0">
+        <div data-pop className="relative max-w-max mx-auto px-4 sm:px-0 mb-6 lg:mb-0">
           <div className="absolute inset-0 translate-x-3.5 translate-y-3.5 sm:translate-x-4 sm:translate-y-4 bg-[#22c55e] rounded-3xl border-[2.5px] border-black dark:border-white"></div>
           <img
             src="/assets/user-image.png"

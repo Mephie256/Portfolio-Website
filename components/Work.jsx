@@ -53,6 +53,7 @@ export default function Work() {
             target={item.link ? "_blank" : "_self"}
             rel="noopener noreferrer"
             key={item.name}
+            data-pop
             className="aspect-square bg-no-repeat bg-cover bg-center rounded-2xl relative cursor-pointer group block overflow-hidden border-2 border-black dark:border-white shadow-neo dark:shadow-neo-white hover:-translate-y-2 hover:shadow-neo-lg dark:hover:shadow-neo-white-lg transition-all duration-200"
             style={{ backgroundImage: `url(${item.icon})` }}
           >
