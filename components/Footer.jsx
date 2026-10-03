@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="mt-20 pb-12">
       <div className="text-center">
-        <a href="/" className="inline-block">
+        <Link href="/" className="inline-block">
           <img
             src="/assets/logo.png"
             alt="Denis Ezekiel"
@@ -13,7 +15,7 @@ export default function Footer() {
             alt="Denis Ezekiel"
             className="w-36 mx-auto mb-3 hidden dark:block"
           />
-        </a>
+        </Link>
 
         <div className="w-max mx-auto mt-2">
           <a

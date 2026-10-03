@@ -158,8 +158,10 @@ export default function PageAnimations() {
             clearTimeout(fallback);
             window.removeEventListener("intro:reveal", run);
             window.removeEventListener("load", refresh);
+            // Only undo the animations. Do NOT force elements visible here: React runs
+            // effects twice in dev (mount, cleanup, mount), and un-hiding them in between
+            // makes the cards flash before they pop. The CSS keeps them hidden until animated.
             ctx.revert();
-            [...images, ...cards, ...reveals, ...headingParts].forEach(show);
         };
     }, []);
 

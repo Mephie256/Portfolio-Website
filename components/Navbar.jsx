@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { play, isEnabled, setEnabled, subscribe } from "@/lib/sound";
+import Link from "next/link";
 
 export default function Navbar() {
   const sideMenuRef = useRef();
@@ -64,7 +65,7 @@ export default function Navbar() {
           className="w-full rounded-full border-2 border-black dark:border-white bg-white/95 dark:bg-darkTheme/95 backdrop-blur-md px-4 sm:px-7 py-1 sm:py-3 shadow-neo dark:shadow-neo-white flex items-center justify-between transition-all"
         >
           {/* Brand / Logo */}
-          <a href="/" className="flex items-center py-1.5">
+          <Link href="/" className="flex items-center py-1.5">
             <img
               src="/assets/logo.png"
               alt="Denis Ezekiel"
@@ -75,41 +76,41 @@ export default function Navbar() {
               alt="Denis Ezekiel"
               className="w-24 sm:w-28 cursor-pointer hidden dark:block"
             />
-          </a>
+          </Link>
 
           {/* Desktop Nav Links */}
           <ul className="hidden md:flex items-center gap-6 lg:gap-8 font-Outfit font-semibold text-sm lg:text-base text-gray-800 dark:text-gray-200">
             <li>
-              <a
+              <Link
                 className="hover:text-green-600 dark:hover:text-green-400 hover:underline decoration-2 underline-offset-4 transition"
                 href="/"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="hover:text-green-600 dark:hover:text-green-400 hover:underline decoration-2 underline-offset-4 transition"
                 href="/about"
               >
                 About me
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="hover:text-green-600 dark:hover:text-green-400 hover:underline decoration-2 underline-offset-4 transition"
                 href="/services"
               >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="hover:text-green-600 dark:hover:text-green-400 hover:underline decoration-2 underline-offset-4 transition"
                 href="/work"
               >
                 Projects
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -214,44 +215,44 @@ export default function Navbar() {
         </div>
 
         <li>
-          <a
+          <Link
             href="/"
             onClick={closeMenu}
             data-snd="none"
             className="text-lg hover:text-green-500 transition"
           >
             Home
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/about"
             onClick={closeMenu}
             data-snd="none"
             className="text-lg hover:text-green-500 transition"
           >
             About me
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/services"
             onClick={closeMenu}
             data-snd="none"
             className="text-lg hover:text-green-500 transition"
           >
             Services
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="/work"
             onClick={closeMenu}
             data-snd="none"
             className="text-lg hover:text-green-500 transition"
           >
             Projects
-          </a>
+          </Link>
         </li>
         <li className="pt-4">
           <a

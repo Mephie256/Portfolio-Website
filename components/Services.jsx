@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import Link from "next/link";
 
 const orivian = localFont({
   src: "../public/fonts/rocline/orivian/OrivianDemo-Regular.otf",
@@ -64,13 +65,13 @@ export default function Services() {
                 {service.description}
               </p>
             </div>
-            <a
+            <Link
               href={service.link}
               className="flex items-center gap-2 text-sm font-Outfit font-bold text-black dark:text-white py-3 mt-3 -mb-3 group-hover:translate-x-1.5 transition-transform"
             >
               Read more
               <img src="/assets/right-arrow.png" alt="" className="w-4 dark:invert" />
-            </a>
+            </Link>
           </div>
         ))}
       </div>
