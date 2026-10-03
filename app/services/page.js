@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import LenisScroll from "@/components/LenisScroll";
+import IntroLoader from "@/components/IntroLoader";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import localFont from "next/font/local";
@@ -86,19 +87,20 @@ export default function ServicesPage() {
     return (
         <>
             <LenisScroll />
+            <IntroLoader />
             <Navbar />
 
             <main className="pt-28 pb-24 min-h-screen dark:bg-darkTheme dark:text-white">
                 <div className="w-full px-4 sm:px-8 lg:px-[12%]">
                     {/* Header Section */}
                     <div className="text-center mb-16 mt-8">
-                        <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
+                        <h4 data-intro="pre" className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
                             Tailored digital solutions
                         </h4>
-                        <h1 className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-black dark:text-white mb-4 ${orivian.className}`}>
+                        <h1 data-intro="title" className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-black dark:text-white mb-4 ${orivian.className}`}>
                             My Services
                         </h1>
-                        <p className="max-w-3xl mx-auto font-Ovo text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                        <p data-intro="fade" className="max-w-3xl mx-auto font-Ovo text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                             I build high-performance software solutions, design impactful brand visuals, and create engaging video content that drives results. From raw code logic to boundless creativity, I help businesses stand out with professional execution.
                         </p>
                     </div>

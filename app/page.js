@@ -1,4 +1,5 @@
 import LenisScroll from "@/components/LenisScroll";
+import IntroLoader from "@/components/IntroLoader";
 import ImagePop from "@/components/ImagePop";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
@@ -13,6 +14,7 @@ export default function Page() {
     return (
         <>
             <LenisScroll />
+            <IntroLoader navbar />
             <ImagePop />
             <Navbar />
             <Header />

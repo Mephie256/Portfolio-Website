@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import LenisScroll from "@/components/LenisScroll";
+import IntroLoader from "@/components/IntroLoader";
 import ImagePop from "@/components/ImagePop";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -80,6 +81,7 @@ export default function WorkPage() {
     return (
         <>
             <LenisScroll />
+            <IntroLoader />
             <ImagePop />
             <Navbar />
 
@@ -87,13 +89,13 @@ export default function WorkPage() {
                 <div className="w-full px-4 sm:px-8 lg:px-[12%]">
                     {/* Header Section */}
                     <div className="text-center mb-16 mt-8">
-                        <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
+                        <h4 data-intro="pre" className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
                             My portfolio
                         </h4>
-                        <h1 className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-black dark:text-white mb-4 ${orivian.className}`}>
+                        <h1 data-intro="title" className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-black dark:text-white mb-4 ${orivian.className}`}>
                             My Latest Work
                         </h1>
-                        <p className="max-w-3xl mx-auto font-Ovo text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                        <p data-intro="fade" className="max-w-3xl mx-auto font-Ovo text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                             A curated showcase of innovative software solutions, modern graphic designs, and high-quality video edits. Every project reflects deep technical expertise and professional creativity aimed at real impact.
                         </p>
                     </div>

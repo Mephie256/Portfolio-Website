@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import LenisScroll from "@/components/LenisScroll";
+import IntroLoader from "@/components/IntroLoader";
 import ImagePop from "@/components/ImagePop";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -61,16 +62,17 @@ export default function AboutPage() {
     return (
         <>
             <LenisScroll />
+            <IntroLoader />
             <ImagePop />
             <Navbar />
 
             <main className="pt-28 min-h-screen dark:bg-darkTheme dark:text-white pb-20">
                 <div className="w-full px-4 sm:px-8 lg:px-[12%] py-10">
                     <div className="text-center mb-12">
-                        <h4 className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
+                        <h4 data-intro="pre" className="inline-block px-4 py-1 rounded-full border-2 border-black dark:border-white shadow-neo-sm dark:shadow-neo-white-sm bg-white dark:bg-darkHover text-xs sm:text-sm font-Outfit font-bold uppercase tracking-wider mb-3">
                             Get to know me deeply
                         </h4>
-                        <h1 className={`text-center text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black dark:text-white ${orivian.className}`}>
+                        <h1 data-intro="title" className={`text-center text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black dark:text-white ${orivian.className}`}>
                             About Me
                         </h1>
                     </div>

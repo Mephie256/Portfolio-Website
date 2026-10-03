@@ -8,3 +8,13 @@
         opacity: 0;
     }
 }
+
+/* Home intro overlay (components/IntroLoader.jsx): only shown when JS runs */
+.intro-loader {
+    display: none;
+}
+@media (scripting: enabled) {
+    .intro-loader {
+        display: flex;
+    }
+}

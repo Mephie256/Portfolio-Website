@@ -54,17 +54,18 @@ export default function Header() {
         {/* Center Column: PP Hatton Headline & Centered Content */}
         <div className="order-1 lg:order-2 lg:col-span-6 w-full text-center flex flex-col items-center justify-center px-1 sm:px-4 xl:px-6">
           <h1
+            data-intro="title"
             className={`text-3xl min-[380px]:text-4xl sm:text-5xl md:text-6xl lg:text-[60px] xl:text-[72px] 2xl:text-[76px] leading-[1.1] sm:leading-[1.08] font-bold text-black dark:text-white tracking-tight max-w-2xl xl:max-w-3xl ${ppHatton.className}`}
           >
             Denis Ezekiel — fullstack web developer based in Uganda.
           </h1>
 
-          <p className="mt-4 sm:mt-6 max-w-xl xl:max-w-2xl mx-auto font-Ovo text-sm sm:text-lg xl:text-xl text-gray-700 dark:text-gray-300 leading-relaxed px-2 sm:px-0">
+          <p data-intro="fade" className="mt-4 sm:mt-6 max-w-xl xl:max-w-2xl mx-auto font-Ovo text-sm sm:text-lg xl:text-xl text-gray-700 dark:text-gray-300 leading-relaxed px-2 sm:px-0">
             Crafting unforgettable digital experiences across web, mobile, and creative media. 4+ years of experience partnering with fast-growing startups and organizations.
           </p>
 
           {/* The 3 Prominent Neobrutalist Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 mt-6 sm:mt-10">
+          <div data-intro="fade" className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 mt-6 sm:mt-10">
             {/* Button 1: My Work (Vibrant Green #22c55e) */}
             <a
               href="#work"

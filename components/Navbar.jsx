@@ -39,7 +39,7 @@ export default function Navbar() {
         <img src="/assets/header-bg-color.png" alt="" className="w-full" />
       </div>
 
-      <header className="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 w-[92%] max-w-5xl z-50">
+      <header data-intro="nav" className="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 w-[92%] max-w-5xl z-50">
         <nav
           className="w-full rounded-full border-2 border-black dark:border-white bg-white/95 dark:bg-darkTheme/95 backdrop-blur-md px-4 sm:px-7 py-1 sm:py-3 shadow-neo dark:shadow-neo-white flex items-center justify-between transition-all"
         >
